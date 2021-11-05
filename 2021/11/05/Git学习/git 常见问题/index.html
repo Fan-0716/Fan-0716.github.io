@@ -24,7 +24,7 @@
 
   
 
-  <title>模电笔记（一阶动态电路的暂态分析） | Li&#39;s blog</title>
+  <title>git 常见问题 | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">模电笔记（一阶动态电路的暂态分析）</h1>
+          <h1 class="title-wrap">git 常见问题</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -106,12 +106,12 @@
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E8%AF%BE%E7%A8%8B/">📒 课程</a></li>
+    <li><a href="/categories/%E5%AD%A6%E4%B9%A0/">📒 学习</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
+    <li><a href="/tags/Git/">🏷️ Git</a></li>
   
 </ul>
         </div>
@@ -135,99 +135,49 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="一阶动态电路的暂态分析"><a href="#一阶动态电路的暂态分析" class="headerlink" title="一阶动态电路的暂态分析"></a>一阶动态电路的暂态分析</h1><p><img src="doc/image-20210613134522773.png" alt="image-20210613134522773"></p>
-<h2 id="2-1-电容元件与电感元件"><a href="#2-1-电容元件与电感元件" class="headerlink" title="2.1 电容元件与电感元件"></a>2.1 电容元件与电感元件</h2><h3 id="2-1-1-电容元件"><a href="#2-1-1-电容元件" class="headerlink" title="2.1.1 电容元件"></a>2.1.1 电容元件</h3><p>电容元件是从实际的电容器抽象而来</p>
-<p><strong>电容量</strong>（常简称为<strong>电容</strong>）是描述电容元件的参数，用 C 表示，单位为法拉（F）</p>
-<p>电容器的主要参数有：<strong>标称容量</strong>、<strong>允许偏差</strong>和<strong>工作电压</strong></p>
-<p>电容器在使用时，容许加在其两端的最大电压值称为<strong>工作电压</strong>，也称<strong>耐压</strong></p>
-<p>电容的电路符号如图所示：</p>
-<img src="doc/image-20210606150455138.png" alt="image-20210606150455138" style="zoom:50%;" />
+        <h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="尽量避免使用绝对路径"><a href="#尽量避免使用绝对路径" class="headerlink" title="尽量避免使用绝对路径"></a>尽量避免使用绝对路径</h2><p>图片尽量避免使用绝对路径，改为相对路径</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">avatar</span>](<span class="link">buildWebsites.jpg</span>)  如果图片与.md文件在同一目录下，那么相对路径这样表示</span><br><span class="line"></span><br><span class="line">![<span class="string">avatar</span>](<span class="link">1/buildWebsites.jpg</span>)  1为md所在文件夹下的文件夹</span><br><span class="line"></span><br><span class="line">![<span class="string">avatar</span>](<span class="link">../buildWebsites.jpg</span>)  父路径由..表示</span><br></pre></td></tr></table></figure>
 
-<p>在关联参考方向下，电容的<strong>伏安特性</strong>为<br>$$<br>i_c(t)=\frac{dq}{dt}=\frac{d[Cu_c(t)]}{dt}=C\frac{du_c(t)}{dt}（正比于电压变化率）<br>$$<br>电容元件的<strong>伏安关系</strong>是一个微分关系</p>
-<p>电容是一个<strong>动态元件</strong></p>
-<p>当电容两端的电压保持不变，则通过它的电流为零</p>
-<p>对直流电压而言，电容相当于开路，因此电容具有隔断直流的作用<br>$$<br>i_{\mathrm{C}}(t)=C \frac{\mathrm{d} u_{\mathrm{C}}(t)}{\mathrm{d} t} \Rightarrow u_{\mathrm{C}}(t)=u_{\mathrm{C}}\left(t_{0}\right)+\frac{1}{C} \int_{t_{0}}^{t} i_{\mathrm{C}}(\tau) \mathrm{d} \tau<br>$$<br>无源器件：<br>$$<br>w_{\mathrm{C}}(t)=\int_{-\infty}^{t} p(\lambda) \mathrm{d} \lambda=\int_{-\infty}^{t} C u \frac{\mathrm{d} u}{\mathrm{~d} \lambda} \mathrm{d} \lambda=\frac{1}{2} C u^{2}(t) \geq 0<br>$$<br>电容储存的能量只与当前时间电容两端的电压值有关</p>
-<p>电容的电压反映了其储存能量的大小，将电压称为电容的<strong>状态变量</strong></p>
-<p><img src="doc/image-20210606151420784.png" alt="image-20210606151420784"></p>
-<h3 id="2-1-2-电感元件"><a href="#2-1-2-电感元件" class="headerlink" title="2.1.2 电感元件"></a>2.1.2 电感元件</h3><p>电感元件是从实际的电感线圈或电感器元件抽象而来</p>
-<p><strong>电感量</strong>（常简称<strong>电感</strong>）是用于描述电感元件的参数，用 L 表示，单位是亨利（H）</p>
-<p>常见电感器有磁芯环形电感、工字电感和色环电感等</p>
-<p>电感器的主要参数：</p>
+<h2 id="出现无法-push-pull-的现象"><a href="#出现无法-push-pull-的现象" class="headerlink" title="出现无法 push/pull 的现象"></a>出现无法 push/pull 的现象</h2><h3 id="port-443-：Timed-out"><a href="#port-443-：Timed-out" class="headerlink" title="port  ==443==：Timed out"></a>port  ==443==：Timed out</h3><h4 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息"></a>错误信息</h4><p><code>Failed to connect to github.com port 443: Timed out</code></p>
+<p>如下图所示</p>
+<p><img src="../picture/image-20210307225211565.png" alt="image-20210307225211565">    </p>
+<p>git提示Failed to connect to github.com port 443: Timed out</p>
+<p>这边我发现我的网络是没有问题，且github也能正常访问</p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>443 报错是因为出现了网络问题：</p>
 <ol>
-<li><strong>电感量</strong>和容许误差</li>
-<li><strong>品质因数</strong>，用 Q 表示，Q 值越大，线圈的损耗越小，效率越高</li>
-<li><strong>标称电流</strong>（<strong>额定电流</strong>）是指电感线圈在正常工作时，容许通过的最大电流</li>
+<li>是否使用了代理</li>
+<li>代理的节点是否有问题</li>
+<li>git 是否认定该代理是安全的</li>
 </ol>
-<p>在关联参考方向下，电感的伏安特性为<br>$$<br>u_L(t)=L\frac{di_L(t)}{dt}（正比于电流变化率）<br>$$<br>电感元件的伏安特性是一个微分关系</p>
-<p>当流过电感的电流保持不变，则其两端的电压为零</p>
-<p>对直流电流而言，电感相当于短路<br>$$<br>u_{\mathrm{L}}(t)=L \frac{\mathrm{d} i_{\mathrm{L}}(t)}{\mathrm{d} t} \quad \Rightarrow \quad i_{\mathrm{L}}(t)=i_{\mathrm{L}}\left(t_{0}\right)+\frac{1}{L} \int_{t_{0}}^{t} u_{\mathrm{L}}(\tau) \mathrm{d} \tau<br>$$<br>电感元件以磁场能的形式存储能量</p>
-<p>无源器件：<br>$$<br>\boldsymbol{w}<em>{\mathrm{L}}(\boldsymbol{t})=\int</em>{-\infty}^{t} \boldsymbol{p}(\lambda) \mathrm{d} \lambda=\int_{-\infty}^{t} \boldsymbol{L} \boldsymbol{i} \frac{\mathrm{d} i}{\mathbf{d} \lambda} \mathbf{d} \lambda=\frac{1}{2} \boldsymbol{L} \boldsymbol{i}^{2}(\boldsymbol{t}) \geq 0<br>$$<br>电感存储的能量只与当前时间流过电感的电流值有关 </p>
-<p>电感的电流反映了其存储能量的大小，将电流称为电感的<strong>状态变量</strong> </p>
-<p><img src="doc/image-20210606152801851.png" alt="image-20210606152801851"></p>
-<h2 id="2-2-换路定则及其初始条件"><a href="#2-2-换路定则及其初始条件" class="headerlink" title="2.2 换路定则及其初始条件"></a>2.2 换路定则及其初始条件</h2><h3 id="2-2-1-换路定则"><a href="#2-2-1-换路定则" class="headerlink" title="2.2.1 换路定则"></a>2.2.1 换路定则</h3><h4 id="换路"><a href="#换路" class="headerlink" title="换路"></a>换路</h4><p>电路中开关的接通、断开，元件参数的变化统称为<strong>换路</strong></p>
-<p>换路会使电路从一个状态过渡到另一个状态（因为储能元件的能量变化需要时间），这个过程称为<strong>过渡过程</strong></p>
-<p>储能元件电压与电流是微分关系，分析动态电路要列解微分方程。含有一个储能元件的电路列出的是一阶微分方程，因此含有一个储能元件的电路称为<strong>一阶电路</strong></p>
-<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>$0_{+}$ 换路前一瞬间</p>
-<p>$0_{-}$ 换路后一瞬间</p>
-<p>初始条件为 $t=0_{+}$ 时，u，i 的值，也称为<strong>初始值</strong></p>
-<p>由于物体所具有的能量不能跃变，因此，在换路瞬间储能元件的能量也不能跃变，由<br>$$<br>W_C=\frac{1}{2}Cu^2_C,\quad W_L=\frac{1}{2}Li^2_L<br>$$<br>可见，电容电压 $u_c$ 和电感电流 $i_L$ 不能跃变</p>
-<p><strong>换路定则</strong>：换路时电容上的电压，电感上的电流不能跃变，即<br>$$<br>u_c(0_+)=u_c(0_-)\<br>i_L(0_+)=i_L(0_-)<br>$$</p>
-<h4 id="初始值的计算过程"><a href="#初始值的计算过程" class="headerlink" title="初始值的计算过程"></a>初始值的计算过程</h4><ol>
-<li>先由 $t=0_-$ 等效电路求出 $u_c(0_-)$、$i_L(0_-)$ （电容 $\rightarrow $开路，电感 $\rightarrow$ 短路</li>
-<li>根据换路定律，求出独立变量初始值 $u_c(0_+)$ 和 $i_L(0_+)$</li>
-<li>画出在 $t=0_+$ 时刻的等效电路：用电压源代替电容，电流源代替电感</li>
-<li>求出各个变量的值</li>
-</ol>
-<h2 id="2-3-一阶电路的零输入响应"><a href="#2-3-一阶电路的零输入响应" class="headerlink" title="2.3 一阶电路的零输入响应"></a>2.3 一阶电路的零输入响应</h2><p>响应：电路在激励（外界输入）或储能元件的初始状态作用下产生的输出</p>
-<p><img src="doc/image-20210613182312786.png" alt="image-20210613182312786"></p>
-<h3 id="2-3-1-RC电路的零输入响应"><a href="#2-3-1-RC电路的零输入响应" class="headerlink" title="2.3.1 RC电路的零输入响应"></a>2.3.1 RC电路的零输入响应</h3><p>令 $\tau=RC$，得到图 (b) 电路的零输入响应为<br>$$<br>u_{\mathrm{C}}(t)=U_{0} \mathrm{e}^{-\frac{t}{\tau}}=u_{\mathrm{C}}\left(0_{+}\right) \mathrm{e}^{-\frac{t}{\tau}} \quad(t \geq 0)\<br>i=\frac{u_{\mathrm{R}}}{R}=\frac{u_{\mathrm{C}}}{R}=\frac{U_{0}}{R} e^{-\frac{t}{\tau}}=I_{0} e^{-\frac{t}{\tau}}<br>$$</p>
-<img src="doc/image-20210613184928235.png" alt="image-20210613184928235" style="zoom:50%;" />
+<h4 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h4><p><img src="../picture/image-20210307225714996.png" alt="image-20210307225714996"></p>
+<h4 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h4><p>输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
 
-<p>当 $t=\tau$ 时，$u_c=U_0e^{-1}=0.368\cdot U_0$</p>
-<p>称 $\tau$ 为一阶电路的时间常量</p>
-<ol>
-<li><p>$\tau$ 具有时间的量纲，单位是 s</p>
-</li>
-<li><p><strong>时间常数</strong> $\tau$ 反映了电路过渡过程时间的长短</p>
-</li>
-<li><p>时间常数 $\tau$ 等于曲线的次切距长度</p>
-<img src="doc/image-20210613185947766.png" alt="image-20210613185947766" style="zoom:50%;" /></li>
-</ol>
-<p>工程上认为 $t=(3 \sim 5)\tau$，$u_c\rightarrow0$ 电容放电基本结束</p>
-<h3 id="2-3-2-RL电路的零输入响应"><a href="#2-3-2-RL电路的零输入响应" class="headerlink" title="2.3.2 RL电路的零输入响应"></a>2.3.2 RL电路的零输入响应</h3><p>令 $\tau=\frac{L}{R}$，则零输入响应为<br>$$<br>i_L(t)=I_0e^{-\frac{R}{L}t}=i_L(0_+)e^{-\frac{t}{\tau}}\<br>u_L(t)=L\frac{di_L}{dt}=-RI_0e^{-\frac{t}{\tau}}\quad t&gt;0<br>$$</p>
-<h2 id="2-4-一阶电路的零状态响应"><a href="#2-4-一阶电路的零状态响应" class="headerlink" title="2.4 一阶电路的零状态响应"></a>2.4 一阶电路的零状态响应</h2><p>电路的初始状态为零，由外加激励引起的响应</p>
-<h3 id="2-4-1-RC-电路的零状态响应"><a href="#2-4-1-RC-电路的零状态响应" class="headerlink" title="2.4.1 RC 电路的零状态响应"></a>2.4.1 RC 电路的零状态响应</h3><p>$$<br>u_c(t)=U_s-U_se^{-\frac{t}{\tau}}\<br>i_c(t)=\frac{U_s}{R}e^{-\frac{t}{\tau}}<br>$$</p>
-<p>电容电压由两部分组成：稳态分量、暂态分量</p>
-<p>响应和激励成比例关系，响应与多个外加激励成线性关系（可叠加）</p>
-<h3 id="2-4-2-RL-电路的零状态响应"><a href="#2-4-2-RL-电路的零状态响应" class="headerlink" title="2.4.2 RL 电路的零状态响应"></a>2.4.2 RL 电路的零状态响应</h3><p>$$<br>i_L(t)=\frac{U_s}R-\frac{U_s}Re^{-\frac{t}{\tau}}\<br>u_L(t)=U_se^{-\frac{t}{\tau}}<br>$$</p>
-<h2 id="2-5-一阶电路的完全响应"><a href="#2-5-一阶电路的完全响应" class="headerlink" title="2.5 一阶电路的完全响应"></a>2.5 一阶电路的完全响应</h2><p>由初始状态和外界激励共同引起的响应称为完全响应，简称全响应</p>
-<h3 id="2-5-1-RC-电路的完全响应"><a href="#2-5-1-RC-电路的完全响应" class="headerlink" title="2.5.1 RC 电路的完全响应"></a>2.5.1 RC 电路的完全响应</h3><img src="doc/image-20210615193505299.png" alt="image-20210615193505299" style="zoom: 67%;" />
-$$
-u_c(t)=U_S+(U_0-U_S)e^{-\frac{t}{\tau}}\\
-\Downarrow\\
-u_c(t)=u_c(0_+)e^{-\frac{t}{\tau}}+u_c(\infty)(1-e^{-\frac{t}{\tau}})
-$$
+<p>上述代码块中的 http 网址来自于</p>
+<p><img src="../picture/image-20210307234827404.png" alt="image-20210307234827404">    </p>
+<p>获取方法参照 <a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%80"><u>解决方案一</u></a></p>
+<h3 id="errno-10054"><a href="#errno-10054" class="headerlink" title="errno ==10054=="></a>errno ==10054==</h3><h4 id="错误信息-1"><a href="#错误信息-1" class="headerlink" title="错误信息"></a>错误信息</h4><p><code>error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, errno 10054</code> </p>
+<p>如下图所示</p>
+<p><img src="..//picture/image-20210307232250041.png" alt="image-20210307232250041"></p>
+<h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>这是服务器的SSL证书没有经过第三方机构的签署，所以报错</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p><code>git config --global http.sslVerify &quot;false&quot;</code></p>
+<h3 id="warning-LF-will-be-replaced-by-CRLF"><a href="#warning-LF-will-be-replaced-by-CRLF" class="headerlink" title="warning: LF will be replaced by ==CRLF=="></a>warning: LF will be replaced by ==CRLF==</h3><h4 id="错位信息"><a href="#错位信息" class="headerlink" title="错位信息"></a>错位信息</h4><p><code>warning: LF will be replaced by CRLF</code></p>
+<p><img src="picture/git%20%E6%9C%AC%E5%9C%B0%E6%93%8D%E4%BD%9C.md" alt="image-20210331112926817"></p>
+<h4 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h4><ul>
+<li>Mac os 和 linux 系统用 LF 换行（即\n）</li>
+<li>windows 系统用 CRLF 换行（即 \r\n）</li>
+</ul>
+<ul>
+<li>所以 Unix/Mac 系统下的文件在 Windows 里打开的话，所有文字会变成一行</li>
+<li>而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号</li>
+<li>Linux保存的文件在windows上用记事本看的话会出现黑点</li>
+</ul>
+<h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用<code>git config --global core.autocrlf true</code> 来自动转换换行符和回车换行符</p>
+<h3 id="Another-git-process-seems-to-be-running-in-this-repository"><a href="#Another-git-process-seems-to-be-running-in-this-repository" class="headerlink" title="==Another== git process seems to be running in this repository"></a>==Another== git process seems to be running in this repository</h3><h4 id="错误信息-2"><a href="#错误信息-2" class="headerlink" title="错误信息"></a>错误信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fatal: Unable to create <span class="string">&#x27;D:/Github Responsitories/hdujsjtw.zuzhi/.git/index.lock&#x27;</span>: File exists.</span><br><span class="line"></span><br><span class="line">Another git process seems to be running <span class="keyword">in</span> this repository, e.g.</span><br><span class="line">an editor opened by <span class="string">&#x27;git commit&#x27;</span>. Please make sure all processes</span><br><span class="line">are terminated <span class="keyword">then</span> try again. If it still fails, a git process</span><br><span class="line">may have crashed <span class="keyword">in</span> this repository earlier:</span><br><span class="line">remove the file manually to <span class="built_in">continue</span>.</span><br></pre></td></tr></table></figure>
 
-<p>上方式子可以解释为：稳态分量 + 暂态分量</p>
-<p>下方式子可以解释为：全相应 = 零输入 +  零状态（是叠加定理的一种体现）</p>
-<h3 id="2-5-2-RL-电路的完全响应"><a href="#2-5-2-RL-电路的完全响应" class="headerlink" title="2.5.2 RL 电路的完全响应"></a>2.5.2 RL 电路的完全响应</h3><img src="doc/image-20210615193533867.png" alt="image-20210615193533867" style="zoom:67%;" />
-$$
-i_L(t)=i_L(\infty)+[i_L(0_+)-i_L(\infty)]e^{-\frac{t}{\tau}}=\frac{U_S}R+[\frac{U_0}{R_0}-\frac{U_S}R]e^{-\frac{t}{\tau}}
-$$
-
-<h2 id="2-6-三要素法求一阶电路响应"><a href="#2-6-三要素法求一阶电路响应" class="headerlink" title="2.6 三要素法求一阶电路响应"></a>2.6 三要素法求一阶电路响应</h2><p><em>初始值</em> $f(0_+)$，<em>稳态值</em> $f(\infty)$ 和<em>时间常数</em> $\tau$ 称为电路的<strong>三要素</strong><br>$$<br>f(t)=f(\infty)+[f(0_+)-f(\infty)]e^{-\frac{t}{\tau}}<br>$$<br><strong>适用范围</strong>：</p>
-<ol>
-<li>直流电源激励下</li>
-<li>一阶线性动态电路</li>
-<li>电路中任何电压和电流</li>
-</ol>
-<p><strong>基本步骤</strong>：</p>
-<ol>
-<li>求初始值 $f(0_+)$</li>
-<li>求稳态值 $f(\infty)$</li>
-<li>求时间常数 $\tau$</li>
-<li>求一阶电路响应</li>
-</ol>
+<p><img src="picture/image-20210417135233400.png" alt="image-20210417135233400">    </p>
+<h4 id="原因-3"><a href="#原因-3" class="headerlink" title="原因"></a>原因</h4><p>Git在使用过程中遭遇了奔溃，部分被上锁资源没有被释放导致的。</p>
+<h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4><p>进入项目文件夹下的 .git文件中（显示隐藏文件夹或rm .git/index.lock）删除index.lock文件即可。</p>
 
       </section>
 
@@ -240,8 +190,8 @@ $$
     
     <div class="card-text">
       
-        <a href="/2021/11/05/3.%20%20%E6%AD%A3%E5%BC%A6%E7%A8%B3%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">模电笔记（正弦稳态电路的分析）</h2>
+        <a href="/2021/11/05/Git%E5%AD%A6%E4%B9%A0/git%20%E7%AE%A1%E7%90%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">git 管理远程仓库</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -255,8 +205,8 @@ $$
     
     <div class="card-text">
       
-        <a href="/2021/11/05/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%98%E5%82%A8%E4%BD%93%E7%B3%BB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第五章）</h2>
+        <a href="/2021/11/05/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Older</div>
