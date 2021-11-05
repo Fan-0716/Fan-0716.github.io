@@ -24,7 +24,7 @@
 
   
 
-  <title>模电笔记（正弦稳态电路的分析） | Li&#39;s blog</title>
+  <title>计算机组成原理笔记（第三章） | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">模电笔记（正弦稳态电路的分析）</h1>
+          <h1 class="title-wrap">计算机组成原理笔记（第三章）</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -111,7 +111,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
+    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">🏷️ 计算机组成原理</a></li>
   
 </ul>
         </div>
@@ -135,121 +135,112 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="正弦稳态电路的分析"><a href="#正弦稳态电路的分析" class="headerlink" title="正弦稳态电路的分析"></a>正弦稳态电路的分析</h1><h2 id="3-1-正弦交流电的基本概念"><a href="#3-1-正弦交流电的基本概念" class="headerlink" title="3.1 正弦交流电的基本概念"></a>3.1 正弦交流电的基本概念</h2><p>正弦交流电瞬时值的一般表达式为：<br>$$<br>u=U_msin(\omega t+\theta_u)\<br>i=I_msin(\omega t+\theta_i)<br>$$<br>可见，每个正弦量包含三个基本要素：</p>
-<ol>
-<li>最大值 / 幅值（$U_m$、$I_m$）</li>
-<li>角频率 $\omega$</li>
-<li>初相位（$\theta_u$、$\theta_i$）</li>
-</ol>
-<p>交流电的<strong>有效值</strong>：</p>
-<p>与交流电热效应想等的直流电定义为该交流电的有效值，用大写字母 I、U 表示<br>$$<br>RI^2=\frac1T\int^T_0Ri^2dt\Rightarrow I=\sqrt{\frac1T\int^T_0i^2dt}<br>$$<br>将 正弦函数 i （交流电）带入公式可得：<br>$$<br>I_m=\sqrt2 I\<br>U_m=\sqrt2I<br>$$<br>相位差 $\phi=\theta_u-\theta_i=0^0$ 时，电压与电流相同；$\phi=\theta_u-\theta_i=180^0$ 时，电压与电流相反</p>
-<h2 id="3-2-正弦量的相量表示"><a href="#3-2-正弦量的相量表示" class="headerlink" title="3.2 正弦量的相量表示"></a>3.2 正弦量的相量表示</h2><p><strong>旋转矢量法</strong>：</p>
-<p>在平面坐标上的一个旋转矢量可以表示出正弦量的三个要素</p>
-<p>设正弦量为 $u=U_msin(\omega t+\theta)$</p>
-<ul>
-<li>该旋转的矢量在 y 轴上投影的长度即为正弦量的值</li>
-<li>矢量与 x 轴的夹角为初相位</li>
+        <h1 id="第三章-信息编码与数据表示"><a href="#第三章-信息编码与数据表示" class="headerlink" title="第三章 信息编码与数据表示"></a>第三章 信息编码与数据表示</h1><h2 id="3-1-数值数据的表示"><a href="#3-1-数值数据的表示" class="headerlink" title="3.1 数值数据的表示"></a>3.1 数值数据的表示</h2><h3 id="3-1-1-十进制数的编码"><a href="#3-1-1-十进制数的编码" class="headerlink" title="3.1.1 十进制数的编码"></a>3.1.1 十进制数的编码</h3><h4 id="格雷码"><a href="#格雷码" class="headerlink" title="格雷码"></a>格雷码</h4><h5 id="异或运算法"><a href="#异或运算法" class="headerlink" title="异或运算法"></a>异或运算法</h5><ul>
+<li>首先写出 n 位的二进制编码</li>
+<li>然后在最高位前面加 0，变成 n + 1 位</li>
+<li>最后对每个码字相邻两位做异或运算(相异得 1，相同得 0)</li>
+<li>比如：1100 –&gt; 1010</li>
 </ul>
-<p><img src="doc/image-20210616152555582.png" alt="image-20210616152555582"></p>
-<p>采用复数坐标 $A=a+jb$ ，a 为实部，b 为虚部</p>
-<p>复数的模 $|A|=\sqrt{a^2+b^2}$</p>
-<p>复数的幅角 $\theta =arctan\frac ba$</p>
-<p>实部 $a=|A|cos\theta$</p>
-<p>虚部 $b=|A|sin\theta$</p>
-<p><strong>瞬时值</strong>：<br>$$<br>u(t)=U_msin(\omega t+\theta)=\sqrt2Usin(\omega t+\theta)<br>$$<br>可以表示为：有效值向量 $\dot{U}=U \angle \theta$ 或者 $\dot{U}=Ue^{j\theta}$</p>
-<p>相量是一个与时间无关的复值常数，所以它可以表示正弦量，但不等于正弦量</p>
-<h2 id="3-3-基尔霍夫定律的相量表示"><a href="#3-3-基尔霍夫定律的相量表示" class="headerlink" title="3.3 基尔霍夫定律的相量表示"></a>3.3 基尔霍夫定律的相量表示</h2><p>$$<br>\sum\dot I=0\<br>\sum\dot U=0<br>$$</p>
-<h2 id="3-4-三种基本元件伏安关系的相量表示"><a href="#3-4-三种基本元件伏安关系的相量表示" class="headerlink" title="3.4 三种基本元件伏安关系的相量表示"></a>3.4 三种基本元件伏安关系的相量表示</h2><h3 id="3-4-1-电阻元件"><a href="#3-4-1-电阻元件" class="headerlink" title="3.4.1 电阻元件"></a>3.4.1 电阻元件</h3><p>电压与电流的关系可以表示为 $\dot U=R\dot I$</p>
-<p>设 $i=\sqrt2Isin\omega t$</p>
-<p>则 $u=\sqrt2RIsin\omega t$</p>
-<ol>
-<li>频率相同</li>
-<li>有效值 $U=RI$</li>
-<li>相位关系为 $\theta_u=\theta_i$</li>
-</ol>
-<h3 id="3-4-2-电感元件"><a href="#3-4-2-电感元件" class="headerlink" title="3.4.2 电感元件"></a>3.4.2 电感元件</h3><p>电压与电流的关系<br>$$<br>u=L\frac{di}{dt}<br>$$</p>
-<p>设 $i=\sqrt2Isin\omega t$</p>
-<p>则 $u=\sqrt2Usin(\omega t+90^o)$</p>
-<ol>
-<li><p>频率相同</p>
+<h4 id="余三码"><a href="#余三码" class="headerlink" title="余三码"></a>余三码</h4><p>余三码就是对应的 8421 码加上 0011 构成的</p>
+<h3 id="3-1-2-定点数的表示"><a href="#3-1-2-定点数的表示" class="headerlink" title="3.1.2 定点数的表示"></a>3.1.2 定点数的表示</h3><h4 id="有符号数的定点表示"><a href="#有符号数的定点表示" class="headerlink" title="有符号数的定点表示"></a>有符号数的定点表示</h4><ul>
+<li>可以用原码、反码、补码三种方式来表示定点整数和定点小数</li>
+<li>还可以用移码表示定点整数</li>
+<li>一般的机器字长是 8 位</li>
+</ul>
+<p><img src="doc/image-20210311203800671.png" alt="image-20210311203800671">    </p>
+<h5 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h5><h6 id="原码定点整数"><a href="#原码定点整数" class="headerlink" title="原码定点整数"></a>原码定点整数</h6><ul>
+<li>正数的符号位为 0，负数的符号位为 1 ；数值部分直接按照二进制填充，高位凑 0  </li>
+</ul>
+<p><img src="doc/image-20210311204316883.png" alt="image-20210311204316883">    </p>
+<h6 id="原码定点小数"><a href="#原码定点小数" class="headerlink" title="原码定点小数"></a>原码定点小数</h6><ul>
+<li>正数的符号位为 0，负数的符号位为 1；小数点在符号位的后面，低位凑 0      </li>
+</ul>
+<h5 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h5><ul>
+<li>若符号位为 0，则反码与原码全部相同</li>
+<li>若符号位为 1，则数值为全部取反（符号位不变）</li>
+<li>小数和整数都是这样的规则</li>
+<li>真值 0 有 +0 和 -0 两种形式，[+0]<sub>反 </sub> =  00000000；[-0]<sub>反 </sub> = 11111111</li>
+<li>反码只是原码转变为补码的一个<strong>中间状态</strong>，实际上没什么用</li>
+</ul>
+<h5 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h5><ul>
+<li><strong>正数的补码 = 原码；负数的补码 = 反码末位 + 1（要考虑进位）</strong></li>
+<li><strong>负数的补码中，最右边的 1 及其右边同原码，最右边的 1 的左边同反码</strong>（仅为数值位，不包括符号位）</li>
+<li>补码的真值 0 只有一种表现形式 [+0]<sub>补 </sub> =  [-0]<sub>补</sub> = 00000000</li>
+<li>由 [x]<sub>补</sub> 快速求 [-x]<sub>补</sub> 的方法：全部位取反，末位再加一</li>
+</ul>
+<h5 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h5><ul>
+<li>补码的基础上将符号位取反</li>
+<li>移码只能用来表示整数</li>
+<li>移码表示的整数很方便对比大小 </li>
+</ul>
+<h3 id="3-1-3-浮点数的表示"><a href="#3-1-3-浮点数的表示" class="headerlink" title="3.1.3 浮点数的表示"></a>3.1.3 浮点数的表示</h3><p><img src="doc/image-20210312101959353.png" alt="image-20210312101959353">    </p>
+<ul>
+<li>阶码反映浮点数的表示范围以及小数点的实际位置；阶码是常用补码或移码表示的定点整数</li>
+<li>尾数的数值部分的位数反应浮点数的精度；尾数是常用原码或补码表示的定点小数</li>
+<li>例如：对于阶码和尾数均用补码表示的浮点数 a：**<code>0,01;1.1001</code>**<br><img src="doc/image-20210312102511457.png" alt="image-20210312102511457"></li>
+</ul>
+<h4 id="浮点数尾数的规格化"><a href="#浮点数尾数的规格化" class="headerlink" title="浮点数尾数的规格化"></a>浮点数尾数的规格化</h4><ul>
+<li>规定<strong>尾数的最高<u>数值位</u>必须是一个有效值</strong> (即最高位不能为 0 )</li>
+<li>采用原码表示的尾数，最高数值位为1；采用补码的，最高数值位为0</li>
+<li>左规：当浮点数运算的结果为非规格化时要进行规格化处理，将尾数算数左移一位，阶码减一</li>
+<li>右规：当浮点数运算的结果尾数出现溢出（双符号位为 01 或 10 时），将尾数算数右移一位，阶码加一</li>
+<li>采用双符号位，当溢出发生时，可以挽救；更高的符号位是正确的符号位</li>
+<li>尾数的补码算数左移，低位补 0；算数右移，负数的话高位补 1，正数高位补 0<h4 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围"></a>浮点数的表示范围</h4></li>
+<li>碰到正下溢和负下溢时，当做机器 0；碰到正上溢和负上溢（机器码尾数不够表示数值）时，抛出异常</li>
+</ul>
+<h3 id="3-1-3-校验码"><a href="#3-1-3-校验码" class="headerlink" title="3.1.3 校验码"></a>3.1.3 校验码</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li>校验码是一种具有发现某些错误或自动改正错位能力的一种数据编码方法</li>
+<li>由若干位代码组成的一个字叫做<strong>码字</strong></li>
+<li>各个合法字码间的最小距离为<strong>码距</strong>（就是有多少个位是不一样的）</li>
+<li>当码距 d 为 1 的时候，无纠错能力；d = 2 时，有检错能力；d &gt;= 时，若设计合理，可能具有检错、纠错能力</li>
+</ul>
+<h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><p><img src="doc/image-20210312213908387.png" alt="image-20210312213908387">    </p>
+<ul>
+<li>奇校验码：整个校验码中的 1 的个数为奇数</li>
+<li>偶校验码：整个校验码中的 1 的个数为偶数</li>
+<li>例如： 奇校验 1001101 有 4 个 1，所以在校验位再添一个 1，得到奇数个的 1 的 11001101</li>
+<li>发生奇数个位的跳变的时候，奇偶校验码可以检错；偶数个位的跳变不行</li>
+</ul>
+<h4 id="海明校验码"><a href="#海明校验码" class="headerlink" title="海明校验码"></a>海明校验码</h4><ul>
+<li>设计思路：对有效信息位分组进行偶校验，得到多个校验位</li>
+</ul>
+<h5 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h5><h6 id="确定海明码的位数"><a href="#确定海明码的位数" class="headerlink" title="确定海明码的位数"></a>确定海明码的位数</h6><p>  <img src="doc/image-20210312214641504.png" alt="image-20210312214641504"></p>
+<h6 id="确定校验码的分布"><a href="#确定校验码的分布" class="headerlink" title="确定校验码的分布"></a>确定校验码的分布</h6><p>检验位 p<sub>i</sub> 放在号为 2<sup>i-1</sup> 的位置上（即放在 1，2，4，8…..的位置上，如下图所示）</p>
+<p><img src="doc/image-20210312215315591.png" alt="image-20210312215315591">    </p>
+<h6 id="求校验位的值"><a href="#求校验位的值" class="headerlink" title="求校验位的值"></a>求校验位的值</h6><p>比如说 P<sub>1</sub>，它的真值为 1101，决定了它为 D<sub>1</sub> D<sub>2</sub> D<sub>3</sub> 的异或值</p>
+<p><img src="doc/image-20210312232916574.png" alt="image-20210312232916574">    </p>
+<h6 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h6><p>校验方程与上一步的偶校验相同，如果得到真值为 1 的，则有错误</p>
+<p><img src="doc/image-20210312233407517.png" alt="image-20210312233407517">    </p>
+<h4 id="循环冗余校验码"><a href="#循环冗余校验码" class="headerlink" title="循环冗余校验码"></a>循环冗余校验码</h4><h5 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h5><ul>
+<li><p>数据发送、接受方约定一个<u>除数</u></p>
 </li>
-<li><p>有效值 $U=\omega LI$</p>
-<p>定义 $X_L=\omega L=2\pi fL$</p>
-<p>则 $U=X_L I$</p>
+<li><p>K 个信息位 + R 个校验位作为<u>被除数</u>，添加校验位后需要保证除法的余数为 0</p>
 </li>
-<li><p>电压超前电流 $90^0$</p>
+<li><p>收到数据后，进行除法检查余数是否为 0</p>
+<p><img src="doc/image-20210313093108075.png" alt="image-20210313093108075">    </p>
 </li>
+</ul>
+<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p><img src="doc/%E7%AC%AC%E4%B8%89%E7%AB%A0.md" alt="image-20210313104037641"></p>
+<p>生成多项式的各位的<strong>系数</strong>，则为该校验码约定的<strong>除数</strong></p>
+<h6 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h6><ol>
+<li>根据生成多项式的系数得到除数 1101</li>
+<li>移位：信息码左移 R位（校验码的位数），低位补 0</li>
+<li>对移位后的信息码，依据除数 1101 进行<u>模 2 取余</u>，产生的余数则为校验码，最后得到对应的 CRC 码</li>
+<li>检错和纠错，对接收到的 CRC 码用（约定好的）除数 1101 进行模 2 取余，余数为 0，则未出错</li>
+<li>为保证 CRC 校验码拥有 1 位纠错能力，要使得位数符合 2<sup>R</sup> &gt;= K + R + 1</li>
+<li>实际上一般只用来检错</li>
 </ol>
-<p>$X_L$ 称为电感电抗，简称<strong>感抗</strong>，单位为欧姆</p>
-<p>定义<br>$$<br>X_L=\omega L=2\pi fL<br>$$</p>
-<p>则 $U=X_L I$</p>
-<p>$$<br>\dot U=j\omega L\dot I=jX_L\dot I<br>$$</p>
-<p>这是电感电路中欧姆定律的相量形式，既表示了电压与电流有效值之间的关系，也反映了两者之间的相位差 </p>
-<h3 id="3-4-3-电容元件"><a href="#3-4-3-电容元件" class="headerlink" title="3.4.3 电容元件"></a>3.4.3 电容元件</h3><p>电流与电压的关系<br>$$<br>i=\frac{dq}{dt}=C\frac{du}{dt}<br>$$<br>若<br>$$<br>U=\sqrt2Usin\omega t<br>$$<br>则<br>$$<br>i=\sqrt2U\omega Csin(\omega t+90^o)<br>$$</p>
-<ol>
-<li>频率相同</li>
-<li>有效值 $I=\omega CU$</li>
-<li>电流超前电压 $90^o$</li>
-</ol>
-<p>因为 $U=\frac1{\omega C}I$</p>
-<p>定义 $X_C=\frac1{\omega C}=\frac1{2\pi fC}$</p>
-<p>则 $U=X_CI$</p>
-<p>$X_C$ 称为电容电抗，简称为容抗，单位为欧姆</p>
-<p>用相量的形式写出电容电压与电流的之间的关系为<br>$$<br>\dot U=-jX_C\dot I=-j\frac1{\omega C}\dot I=\frac{1}{j\omega C}\dot I<br>$$</p>
-<h3 id="3-4-4-小结"><a href="#3-4-4-小结" class="headerlink" title="3.4.4 小结"></a>3.4.4 小结</h3><p><img src="doc/image-20210618135535883.png" alt="image-20210618135535883"></p>
-<h2 id="3-5-简单正弦交流电路"><a href="#3-5-简单正弦交流电路" class="headerlink" title="3.5 简单正弦交流电路"></a>3.5 简单正弦交流电路</h2><h3 id="3-5-1-RLC-串流交流电路"><a href="#3-5-1-RLC-串流交流电路" class="headerlink" title="3.5.1 RLC 串流交流电路"></a>3.5.1 RLC 串流交流电路</h3><p><img src="doc/image-20210618172014355.png" alt="image-20210618172014355"></p>
-<p>设电流<br>$$<br>i=\sqrt2I sin\omega t<br>$$</p>
-<p>则<br>$$<br>u_R=\sqrt2 RIsin(\omega t)\<br>u_L=\sqrt2 \omega LIsin(\omega t+90^o)\<br>u_C=\sqrt2 \frac1{\omega C}I sin(\omega t-90^o)<br>$$<br>对应的相量形式为<br>$$<br>\dot I=I\ang0^o\quad\dot U_R=R\dot I\<br>\dot U_L=jX_L\dot I\quad \dot U_C=-jX_C\dot I<br>$$<br>由 KVL 可得<br>$$<br>\begin{aligned}<br>&amp;\dot{U}=\dot{U}<em>{\mathrm{R}}+\dot{U}</em>{\mathrm{L}}+\dot{U}<em>{\mathrm{C}}=R \dot{I}+\mathrm{j} X</em>{\mathrm{L}} \dot{I}-\mathrm{j} X_{\mathrm{C}} \dot{I} \<br>&amp;=\left[R+\mathrm{j}\left(X_{\mathrm{L}}-X_{\mathrm{C}}\right)\right] \dot{I}=(R+\mathrm{j} X) \dot{I} \<br>&amp;=Z \dot{I}<br>\end{aligned}<br>$$<br>其中<br>$$<br>X=X_L-X_C<br>$$<br>是感抗与容抗之差，称为<strong>电抗</strong>，单位为欧姆</p>
-<p>而<br>$$<br>Z=R+j(X_L-X_C)=R+JX<br>$$<br>称为<strong>复阻抗</strong>，简称<strong>阻抗</strong>，实部为电阻，虚部为电抗</p>
-<p>复阻抗的模<br>$$<br>|Z|=\sqrt{R^2+X^2}=\sqrt{R^2+(\omega L-\frac1{\omega C})^2}<br>$$<br>复阻抗的辐角称为阻抗角<br>$$<br>\phi=arctan\frac XR<br>$$<br>R，X，|Z| 三者之间构成的直角三角形，称为阻抗三角形，如图</p>
-<img src="doc/image-20210619100655128.png" alt="image-20210619100655128" style="zoom:50%;" />
-$$
-Z=\frac{\dot U}{\dot I}=\frac UI\ang\theta_u-\theta_i
-$$
-感性电路：
+<h6 id="模-2-取余"><a href="#模-2-取余" class="headerlink" title="模 2 取余"></a>模 2 取余</h6><p><img src="doc/image-20210313104608287.png" alt="image-20210313104608287">    </p>
+<ul>
+<li>101001000 为移位后的信息码</li>
+<li>1101 为除数</li>
+<li>模 2 取余，以四位数据为一组进行运算</li>
+<li>第一步：1010最高的四位 除 1101，由于 1010 的最高位为 1，则得到的商为 1，剩下的三位 1<u>010</u> （下划线部分） 和除数 1<u>101</u> 的剩下三位（下划线部分）进行异或运算，得到模 <u>111</u>，然后最低位由信息码补充下来，得到1110</li>
+<li>第二步同上</li>
+<li>遇到模的最高位为 0，则该处的商为 0</li>
+<li>以此类推，最后得到 3 位的校验码</li>
+</ul>
 
-<ul>
-<li>当 $X_L &gt;X_C$ 时，$X&gt;0，\phi&gt;0$，电压超前电流，电路呈电感性</li>
-</ul>
-<p>容性电路：</p>
-<ul>
-<li>当 $X_L &lt;X_C$ 时，$X&lt;0，\phi&lt;0$，电压滞后电流，电路呈电容性</li>
-</ul>
-<p>电阻性电路：</p>
-<ul>
-<li>当 $X_L =X_C$ 时，$X=0，\phi=0$，电压与电流同相，电路呈电阻性</li>
-</ul>
-<h3 id="3-5-2-阻抗的串并联"><a href="#3-5-2-阻抗的串并联" class="headerlink" title="3.5.2 阻抗的串并联"></a>3.5.2 阻抗的串并联</h3><h4 id="阻抗的串联"><a href="#阻抗的串联" class="headerlink" title="阻抗的串联"></a>阻抗的串联</h4><p>$$<br> \dot U=(Z_1+Z_2\dot I)<br>$$</p>
-<p>分压公式为<br>$$<br>\dot U_1=\frac{Z_1}{Z_1+Z_2}\dot U\quad\quad\dot U_2=\frac{Z_2}{Z_1+Z_2}\dot U<br>$$<br>显然，多个阻抗串联的等效阻抗为<br>$$<br>Z=Z_1+Z_2+Z_3+\cdots<br>$$<br>对应的分压公式<br>$$<br>\dot U_k=\frac{Z_K}{Z}\dot U<br>$$<br><strong>注意</strong>：分电压可以大于总电压（由于虚部的存在）</p>
-<h4 id="阻抗的并联"><a href="#阻抗的并联" class="headerlink" title="阻抗的并联"></a>阻抗的并联</h4><p>$$<br>\dot U=\frac{Z_1Z_2}{Z_!+Z_2}\dot I<br>$$</p>
-<p>分流公式为<br>$$<br>\dot I_1=\frac{Z_2}{Z_1+Z_2}\dot I\quad\quad\dot I_2=\frac{Z_1}{Z_1+Z_2}\dot I<br>$$</p>
-<h4 id="复导纳"><a href="#复导纳" class="headerlink" title="复导纳"></a>复导纳</h4><p>复阻抗的倒数称为<strong>复导纳</strong>，简称<strong>导纳</strong>（Y 的实数部分叫做电导，虚数部分叫做电纳）<br>$$<br>Y=\frac1Z=\frac1{|Z|\angle\phi}=\frac1{|Z|}\angle{-\phi}<br>$$</p>
-<h2 id="3-6-正弦稳态电路的分析"><a href="#3-6-正弦稳态电路的分析" class="headerlink" title="3.6 正弦稳态电路的分析"></a>3.6 正弦稳态电路的分析</h2><p>利用第一章的知识来求解正弦稳态电路</p>
-<h2 id="3-7-正弦稳态电路的功率"><a href="#3-7-正弦稳态电路的功率" class="headerlink" title="3.7 正弦稳态电路的功率"></a>3.7 正弦稳态电路的功率</h2><h3 id="3-7-1-瞬时功率"><a href="#3-7-1-瞬时功率" class="headerlink" title="3.7.1 瞬时功率"></a>3.7.1 瞬时功率</h3><p>设<br>$$<br>i=I_msin(\omega t+\theta_i)\<br>u=U_msin(\omega t+\theta_u)\<br>$$<br>则<br>$$<br>p(t)=ui=2UIsin(\omega t+\theta_u)sin(\omega t+\theta_i)\<br>=UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)<br>$$<br>瞬时功率实际意义不大，通常引用平均功率的概念</p>
-<h3 id="3-7-2-有功功率及功率因数"><a href="#3-7-2-有功功率及功率因数" class="headerlink" title="3.7.2 有功功率及功率因数"></a>3.7.2 有功功率及功率因数</h3><p>平均功率或称<strong>有功功率</strong>，用大写字母 P 表示，单位为瓦<br>$$<br>P=\frac1T\int^T_0pdt=\frac1T[UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)]dt\<br>=UIcos\phi<br>$$<br>$\lambda=cos\phi$ 称为<strong>功率因数</strong></p>
-<p>$\phi$ 称为<strong>功率因数角</strong></p>
-<ul>
-<li>对于纯电阻电路，$P=I^2R$</li>
-<li>对于纯电感电路，$P=0$</li>
-<li>对于纯电容电路，$P=0$</li>
-</ul>
-<p>只有电阻消耗有功功率，动态元件不消耗有功功率</p>
-<h3 id="3-7-3-无功功率和视在功率"><a href="#3-7-3-无功功率和视在功率" class="headerlink" title="3.7.3 无功功率和视在功率"></a>3.7.3 无功功率和视在功率</h3><p><strong>无功功率</strong>用大写字母 Q 表示，单位为乏（var）<br>$$<br>Q=UIsin\phi<br>$$</p>
-<ul>
-<li>对于纯电感电路，$Q=X_LI^2$</li>
-<li>对于纯电容电路，$Q=X_CI^2$</li>
-<li>对于纯电阻电路，$Q=0$</li>
-</ul>
-<p><strong>视在功率</strong>用 S 表示，单位为伏安（VA）<br>$$<br>S=UI<br>$$</p>
-<h3 id="3-7-4-小结"><a href="#3-7-4-小结" class="headerlink" title="3.7.4 小结"></a>3.7.4 小结</h3><p>有功功率、视在功率和无功功率三者之间构成一个功率三角形<br>$$<br>P=UI\cdot cos\phi\<br>Q=S\cdot sin\phi\<br>S=\sqrt{P^2+Q^2}<br>$$<br><img src="doc/image-20210620004930214.png" alt="image-20210620004930214" style="zoom:50%;" /></p>
-<h3 id="3-7-5-功率因数的提高"><a href="#3-7-5-功率因数的提高" class="headerlink" title="3.7.5 功率因数的提高"></a>3.7.5 功率因数的提高</h3><p>$$<br>\lambda=cos\phi=\frac PS<br>$$</p>
-<p>提高功率因数的意义:</p>
-<ol>
-<li>提高电力设备的利用率</li>
-<li>降低传输线路损耗（可以采用并联电容的方法）</li>
-</ol>
-<p><strong>并联电容的确定</strong>：<br>$$<br>C=\frac{P}{\omega U^{2}}\left(\operatorname{tg} \varphi_{1}-\operatorname{tg} \varphi_{2}\right)<br>$$</p>
-<h3 id="3-8-2-串联谐振"><a href="#3-8-2-串联谐振" class="headerlink" title="3.8.2 串联谐振"></a>3.8.2 串联谐振</h3>
       </section>
 
       
@@ -261,8 +252,8 @@ $$
     
     <div class="card-text">
       
-        <a href="/2021/11/05/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%BC%96%E7%A0%81%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第三章）</h2>
+        <a href="/2021/11/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%98%E5%82%A8%E4%BD%93%E7%B3%BB/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第五章）</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -276,8 +267,8 @@ $$
     
     <div class="card-text">
       
-        <a href="/2021/11/05/2.%20%20%E4%B8%80%E9%98%B6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E6%9A%82%E6%80%81%E5%88%86%E6%9E%90/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">模电笔记（一阶动态电路的暂态分析）</h2>
+        <a href="/2021/11/05/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Older</div>

@@ -24,7 +24,7 @@
 
   
 
-  <title>计算机组成原理笔记（第三章） | Li&#39;s blog</title>
+  <title>模电笔记（直流电路） | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">计算机组成原理笔记（第三章）</h1>
+          <h1 class="title-wrap">模电笔记（直流电路）</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -111,7 +111,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">🏷️ 计算机组成原理</a></li>
+    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
   
 </ul>
         </div>
@@ -135,111 +135,136 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="第三章-信息编码与数据表示"><a href="#第三章-信息编码与数据表示" class="headerlink" title="第三章 信息编码与数据表示"></a>第三章 信息编码与数据表示</h1><h2 id="3-1-数值数据的表示"><a href="#3-1-数值数据的表示" class="headerlink" title="3.1 数值数据的表示"></a>3.1 数值数据的表示</h2><h3 id="3-1-1-十进制数的编码"><a href="#3-1-1-十进制数的编码" class="headerlink" title="3.1.1 十进制数的编码"></a>3.1.1 十进制数的编码</h3><h4 id="格雷码"><a href="#格雷码" class="headerlink" title="格雷码"></a>格雷码</h4><h5 id="异或运算法"><a href="#异或运算法" class="headerlink" title="异或运算法"></a>异或运算法</h5><ul>
-<li>首先写出 n 位的二进制编码</li>
-<li>然后在最高位前面加 0，变成 n + 1 位</li>
-<li>最后对每个码字相邻两位做异或运算(相异得 1，相同得 0)</li>
-<li>比如：1100 –&gt; 1010</li>
-</ul>
-<h4 id="余三码"><a href="#余三码" class="headerlink" title="余三码"></a>余三码</h4><p>余三码就是对应的 8421 码加上 0011 构成的</p>
-<h3 id="3-1-2-定点数的表示"><a href="#3-1-2-定点数的表示" class="headerlink" title="3.1.2 定点数的表示"></a>3.1.2 定点数的表示</h3><h4 id="有符号数的定点表示"><a href="#有符号数的定点表示" class="headerlink" title="有符号数的定点表示"></a>有符号数的定点表示</h4><ul>
-<li>可以用原码、反码、补码三种方式来表示定点整数和定点小数</li>
-<li>还可以用移码表示定点整数</li>
-<li>一般的机器字长是 8 位</li>
-</ul>
-<p><img src="doc/image-20210311203800671.png" alt="image-20210311203800671">    </p>
-<h5 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h5><h6 id="原码定点整数"><a href="#原码定点整数" class="headerlink" title="原码定点整数"></a>原码定点整数</h6><ul>
-<li>正数的符号位为 0，负数的符号位为 1 ；数值部分直接按照二进制填充，高位凑 0  </li>
-</ul>
-<p><img src="doc/image-20210311204316883.png" alt="image-20210311204316883">    </p>
-<h6 id="原码定点小数"><a href="#原码定点小数" class="headerlink" title="原码定点小数"></a>原码定点小数</h6><ul>
-<li>正数的符号位为 0，负数的符号位为 1；小数点在符号位的后面，低位凑 0      </li>
-</ul>
-<h5 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h5><ul>
-<li>若符号位为 0，则反码与原码全部相同</li>
-<li>若符号位为 1，则数值为全部取反（符号位不变）</li>
-<li>小数和整数都是这样的规则</li>
-<li>真值 0 有 +0 和 -0 两种形式，[+0]<sub>反 </sub> =  00000000；[-0]<sub>反 </sub> = 11111111</li>
-<li>反码只是原码转变为补码的一个<strong>中间状态</strong>，实际上没什么用</li>
-</ul>
-<h5 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h5><ul>
-<li><strong>正数的补码 = 原码；负数的补码 = 反码末位 + 1（要考虑进位）</strong></li>
-<li><strong>负数的补码中，最右边的 1 及其右边同原码，最右边的 1 的左边同反码</strong>（仅为数值位，不包括符号位）</li>
-<li>补码的真值 0 只有一种表现形式 [+0]<sub>补 </sub> =  [-0]<sub>补</sub> = 00000000</li>
-<li>由 [x]<sub>补</sub> 快速求 [-x]<sub>补</sub> 的方法：全部位取反，末位再加一</li>
-</ul>
-<h5 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h5><ul>
-<li>补码的基础上将符号位取反</li>
-<li>移码只能用来表示整数</li>
-<li>移码表示的整数很方便对比大小 </li>
-</ul>
-<h3 id="3-1-3-浮点数的表示"><a href="#3-1-3-浮点数的表示" class="headerlink" title="3.1.3 浮点数的表示"></a>3.1.3 浮点数的表示</h3><p><img src="doc/image-20210312101959353.png" alt="image-20210312101959353">    </p>
+        <h1 id="第一章-直流电路"><a href="#第一章-直流电路" class="headerlink" title="第一章 直流电路"></a>第一章 直流电路</h1><h2 id="1-1-电路及电路模型"><a href="#1-1-电路及电路模型" class="headerlink" title="1.1 电路及电路模型"></a>1.1 电路及电路模型</h2><p>略</p>
+<h2 id="1-2-电路变量"><a href="#1-2-电路变量" class="headerlink" title="1.2 电路变量"></a>1.2 电路变量</h2><h3 id="1-2-1-电流和电流的参考方向"><a href="#1-2-1-电流和电流的参考方向" class="headerlink" title="1.2.1 电流和电流的参考方向"></a>1.2.1 电流和电流的参考方向</h3><p><strong>参考方向都是假定的方向</strong></p>
 <ul>
-<li>阶码反映浮点数的表示范围以及小数点的实际位置；阶码是常用补码或移码表示的定点整数</li>
-<li>尾数的数值部分的位数反应浮点数的精度；尾数是常用原码或补码表示的定点小数</li>
-<li>例如：对于阶码和尾数均用补码表示的浮点数 a：**<code>0,01;1.1001</code>**<br><img src="doc/image-20210312102511457.png" alt="image-20210312102511457"></li>
+<li>电流强度 $i(t)$ 的数学表达式为 $i(t)=\frac{\mathrm{d} q}{\mathrm{~d} t}$</li>
+<li>直流电为 DC</li>
+<li>交流电为 AC</li>
 </ul>
-<h4 id="浮点数尾数的规格化"><a href="#浮点数尾数的规格化" class="headerlink" title="浮点数尾数的规格化"></a>浮点数尾数的规格化</h4><ul>
-<li>规定<strong>尾数的最高<u>数值位</u>必须是一个有效值</strong> (即最高位不能为 0 )</li>
-<li>采用原码表示的尾数，最高数值位为1；采用补码的，最高数值位为0</li>
-<li>左规：当浮点数运算的结果为非规格化时要进行规格化处理，将尾数算数左移一位，阶码减一</li>
-<li>右规：当浮点数运算的结果尾数出现溢出（双符号位为 01 或 10 时），将尾数算数右移一位，阶码加一</li>
-<li>采用双符号位，当溢出发生时，可以挽救；更高的符号位是正确的符号位</li>
-<li>尾数的补码算数左移，低位补 0；算数右移，负数的话高位补 1，正数高位补 0<h4 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围"></a>浮点数的表示范围</h4></li>
-<li>碰到正下溢和负下溢时，当做机器 0；碰到正上溢和负上溢（机器码尾数不够表示数值）时，抛出异常</li>
+<h3 id="1-2-2-电压和电压的参考方向"><a href="#1-2-2-电压和电压的参考方向" class="headerlink" title="1.2.2 电压和电压的参考方向"></a>1.2.2 电压和电压的参考方向</h3><p>电压$u(t)$ 的数学表达式为 $u(t)=\frac{\mathrm{d} w}{\mathrm{~d} q}$</p>
+<p>直流电压为 $U$,时变电压为 $u$</p>
+<p>电压<strong>实际的方向</strong>：电位降的方向</p>
+<p><strong>参考方向（极性）</strong>：是为了方便分析和运算，任意<em>假定</em>的电压方向，简称方向</p>
+<p><strong>参考方向的三种表示方法</strong>：正负极性（参考方向是由正极性指向负极性）、箭头和双下标，如下图所示</p>
+<p><img src="doc/image-20210601210250642.png" alt="image-20210601210250642"></p>
+<h4 id="关联参考方向"><a href="#关联参考方向" class="headerlink" title="关联参考方向"></a>关联参考方向</h4><ul>
+<li>当电流的参考方向和电压的参考极性<strong>一致</strong>，则称为<strong>关联参考方向</strong></li>
+<li>相反，则称为<strong>非关联参考方向</strong></li>
+<li>谈关联参考方向，必须明确是对<strong>哪个元件</strong>而言</li>
 </ul>
-<h3 id="3-1-3-校验码"><a href="#3-1-3-校验码" class="headerlink" title="3.1.3 校验码"></a>3.1.3 校验码</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
-<li>校验码是一种具有发现某些错误或自动改正错位能力的一种数据编码方法</li>
-<li>由若干位代码组成的一个字叫做<strong>码字</strong></li>
-<li>各个合法字码间的最小距离为<strong>码距</strong>（就是有多少个位是不一样的）</li>
-<li>当码距 d 为 1 的时候，无纠错能力；d = 2 时，有检错能力；d &gt;= 时，若设计合理，可能具有检错、纠错能力</li>
-</ul>
-<h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><p><img src="doc/image-20210312213908387.png" alt="image-20210312213908387">    </p>
+<h3 id="1-2-3-功率和能量"><a href="#1-2-3-功率和能量" class="headerlink" title="1.2.3 功率和能量"></a>1.2.3 功率和能量</h3><p>电功率是指单位时间内元件吸收或发出的电能，简称<strong>功率</strong>（p）</p>
+<p>对任意一个二端元件（或二端电路），当电压与电流<em>为关联参考方向</em>时有<br>$$<br>p=ui<br>$$</p>
+<p>如果是直流电压和电流，则用大写<br>$$<br>P=UI<br>$$<br>当电压与电流为非关联参考方向时有<br>$$<br>p=-ui<br>$$<br>计算出来的功率：<br>$$<br>\boldsymbol{p}\left{\begin{array}{ll}</p>
+<blockquote>
+<p>\mathbf{0} &amp; \text { 吸收功率 }(\text { 负载 }) \<br>&lt;\mathbf{0} &amp; \text { 提供功率 }(\text { 电源 })<br>\end{array}\right.<br>$$</p>
+</blockquote>
+<h2 id="1-3-电阻元件"><a href="#1-3-电阻元件" class="headerlink" title="1.3 电阻元件"></a>1.3 电阻元件</h2><p>欧姆定律：<br>$$<br>R=\frac{u}{i}\quad or\quad u=Ri<br>$$<br>伏安特性：可以用来区分线性电阻和非线性电阻</p>
+<p><strong>电导</strong>（G）：电阻的倒数<br>$$<br>G=\frac{1}{R}<br>$$<br><strong>开路</strong>：$R\rightarrow\infty$ 时，电阻元件呈现开路状态，电流恒等于零</p>
+<p><strong>短路</strong>：$R\rightarrow0$ 时，电阻元件呈现短路状态，电压恒等于零</p>
+<p>可调式电阻通常称为<strong>电位器</strong></p>
+<h2 id="1-4-电压源与电流源"><a href="#1-4-电压源与电流源" class="headerlink" title="1.4 电压源与电流源"></a>1.4 电压源与电流源</h2><p>电源在电路中<strong>不一定</strong>都是提供功率充当电源。</p>
+<h3 id="1-4-1-理想电压源"><a href="#1-4-1-理想电压源" class="headerlink" title="1.4.1 理想电压源"></a>1.4.1 理想电压源</h3><p>电压源输出的<strong>电压恒定</strong>，与外接的电路无关；电流任意，由外电路确定。</p>
+<p><img src="doc/image-20210330210428600.png" alt="image-20210330210428600"></p>
+<p>电压源的电压可以为零，相当于<strong>短路</strong></p>
+<h3 id="1-4-2-理想电流源"><a href="#1-4-2-理想电流源" class="headerlink" title="1.4.2 理想电流源"></a>1.4.2 理想电流源</h3><p>电流源输出的<strong>电流恒定</strong>，与外接的电路无关；电压任意，由外电路确定</p>
+<p><img src="doc/image-20210330210546708.png" alt="image-20210330210546708"></p>
+<p>电流源的电流可以为零，表示<strong>断路</strong></p>
+<h3 id="1-4-3-实际电源的两个电路模型"><a href="#1-4-3-实际电源的两个电路模型" class="headerlink" title="1.4.3 实际电源的两个电路模型"></a>1.4.3 实际电源的两个电路模型</h3><h4 id="1-实际电压源"><a href="#1-实际电压源" class="headerlink" title="1. 实际电压源"></a>1. 实际电压源</h4><p>电压源 $U_S$ 和内阻 $R_S$ <em>串联</em>组成</p>
+<p><img src="doc/image-20210330210709201.png" alt="image-20210330210709201"></p>
+<p>其电阻 R<sub>S</sub> 称为电源的<strong>内电阻</strong></p>
+<p>其<strong>伏安特性</strong>为 $U=U_{\mathrm{s}}-R_{\mathrm{S}} I$，$U_{OC}$ 称为开路电压，$I_{SC}$ 称为短路电流</p>
+<img src="doc/image-20210602141548630.png" alt="image-20210602141548630" style="zoom:50%;" />
+
+<p>实际电流源的<strong>外特性</strong>是工作电压 U 随着电流的增加而下降</p>
+<h4 id="2-实际电流源"><a href="#2-实际电流源" class="headerlink" title="2. 实际电流源"></a>2. 实际电流源</h4><p>电压源 $I_S$ 和内阻 $R_S$ <em>并联</em>组成</p>
 <ul>
-<li>奇校验码：整个校验码中的 1 的个数为奇数</li>
-<li>偶校验码：整个校验码中的 1 的个数为偶数</li>
-<li>例如： 奇校验 1001101 有 4 个 1，所以在校验位再添一个 1，得到奇数个的 1 的 11001101</li>
-<li>发生奇数个位的跳变的时候，奇偶校验码可以检错；偶数个位的跳变不行</li>
+<li>其<strong>伏安特性</strong>为 $I=I_{\mathrm{S}}-\frac{U}{R_{\mathrm{S}}}$</li>
 </ul>
-<h4 id="海明校验码"><a href="#海明校验码" class="headerlink" title="海明校验码"></a>海明校验码</h4><ul>
-<li>设计思路：对有效信息位分组进行偶校验，得到多个校验位</li>
+<h2 id="1-5-基尔霍夫定律"><a href="#1-5-基尔霍夫定律" class="headerlink" title="==1.5 基尔霍夫定律=="></a>==1.5 基尔霍夫定律==</h2><ul>
+<li><strong>支路</strong>：每一个两端元件视为一个支路</li>
+<li><strong>节点</strong>：三条或者三条以上支路的连接点称为节点</li>
+<li><strong>回路</strong>：电路中任一闭合路径称为回路</li>
+<li><strong>网孔</strong>：在回路内部不另含支路的回路称为网孔</li>
 </ul>
-<h5 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h5><h6 id="确定海明码的位数"><a href="#确定海明码的位数" class="headerlink" title="确定海明码的位数"></a>确定海明码的位数</h6><p>  <img src="doc/image-20210312214641504.png" alt="image-20210312214641504"></p>
-<h6 id="确定校验码的分布"><a href="#确定校验码的分布" class="headerlink" title="确定校验码的分布"></a>确定校验码的分布</h6><p>检验位 p<sub>i</sub> 放在号为 2<sup>i-1</sup> 的位置上（即放在 1，2，4，8…..的位置上，如下图所示）</p>
-<p><img src="doc/image-20210312215315591.png" alt="image-20210312215315591">    </p>
-<h6 id="求校验位的值"><a href="#求校验位的值" class="headerlink" title="求校验位的值"></a>求校验位的值</h6><p>比如说 P<sub>1</sub>，它的真值为 1101，决定了它为 D<sub>1</sub> D<sub>2</sub> D<sub>3</sub> 的异或值</p>
-<p><img src="doc/image-20210312232916574.png" alt="image-20210312232916574">    </p>
-<h6 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h6><p>校验方程与上一步的偶校验相同，如果得到真值为 1 的，则有错误</p>
-<p><img src="doc/image-20210312233407517.png" alt="image-20210312233407517">    </p>
-<h4 id="循环冗余校验码"><a href="#循环冗余校验码" class="headerlink" title="循环冗余校验码"></a>循环冗余校验码</h4><h5 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h5><ul>
-<li><p>数据发送、接受方约定一个<u>除数</u></p>
-</li>
-<li><p>K 个信息位 + R 个校验位作为<u>被除数</u>，添加校验位后需要保证除法的余数为 0</p>
-</li>
-<li><p>收到数据后，进行除法检查余数是否为 0</p>
-<p><img src="doc/image-20210313093108075.png" alt="image-20210313093108075">    </p>
-</li>
-</ul>
-<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p><img src="doc/%E7%AC%AC%E4%B8%89%E7%AB%A0.md" alt="image-20210313104037641"></p>
-<p>生成多项式的各位的<strong>系数</strong>，则为该校验码约定的<strong>除数</strong></p>
-<h6 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h6><ol>
-<li>根据生成多项式的系数得到除数 1101</li>
-<li>移位：信息码左移 R位（校验码的位数），低位补 0</li>
-<li>对移位后的信息码，依据除数 1101 进行<u>模 2 取余</u>，产生的余数则为校验码，最后得到对应的 CRC 码</li>
-<li>检错和纠错，对接收到的 CRC 码用（约定好的）除数 1101 进行模 2 取余，余数为 0，则未出错</li>
-<li>为保证 CRC 校验码拥有 1 位纠错能力，要使得位数符合 2<sup>R</sup> &gt;= K + R + 1</li>
-<li>实际上一般只用来检错</li>
+<h3 id="1-5-1-基尔霍夫电流定律（KCL）"><a href="#1-5-1-基尔霍夫电流定律（KCL）" class="headerlink" title="1.5.1 基尔霍夫电流定律（KCL）"></a>1.5.1 基尔霍夫电流定律（KCL）</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>在电路中，在任一时刻，对任一<strong>节点</strong>（包括广义节点），流入/流出该节点的所有电流的<strong>代数和等于零</strong>，即 </p>
+<p>$$<br>\sum I=0<br>$$</p>
+<p>也可以表示为，任一时刻，流入任一节点的电流之和等于流出该节点的电流之和<br>$$<br>\sum I_{in}=\sum I_{out}<br>$$</p>
+<p><img src="doc/image-20210330212045438.png" alt="image-20210330212045438"></p>
+<h3 id="1-5-2-基尔霍夫电压定律（KVL）"><a href="#1-5-2-基尔霍夫电压定律（KVL）" class="headerlink" title="1.5.2 基尔霍夫电压定律（KVL）"></a>1.5.2 基尔霍夫电压定律（KVL）</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>在电路中，在任一时刻，对任一<strong>回路</strong>（包括广义回路），该回路各元件两端的电压的代数和为零，即<br>$$<br>\sum U=0<br>$$</p>
+<p>p.s. 元件两端的电压方向与回路绕行方向相同时取正号，相反则取负号</p>
+<p>绕行的回路也可以不经过支路，即广义回路：</p>
+<p><img src="doc/image-20210330212306676.png" alt="image-20210330212306676"></p>
+<h2 id="1-6-单口网络及等效"><a href="#1-6-单口网络及等效" class="headerlink" title="1.6 单口网络及等效"></a>1.6 单口网络及等效</h2><p>单口网络又称<strong>二端网络</strong>，是指只有一个端口（一对端钮）与外部电路连接的电路</p>
+<p>单口网络的 VAR 由其自身决定，与外接电路无关</p>
+<p>等效是指对外电路等效，内部结构不一定一样</p>
+<p><img src="doc/image-20210330212524613.png" alt="image-20210330212524613"></p>
+<h3 id="1-6-1-电阻的串并联及等效"><a href="#1-6-1-电阻的串并联及等效" class="headerlink" title="1.6.1 电阻的串并联及等效"></a>1.6.1 电阻的串并联及等效</h3><p>串联电路的等效电阻为 $R=R_{1}+R_{2}+\cdots+R_{n}=\sum_{i=1}^{n} R_{i}$；第 k 个电阻的电压为 $U_{k}=\frac{R_{k}}{\sum_{i=1}^{n} R_{i}} U$</p>
+<p>并联电路的等效电阻为 $\frac{1}{R}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\cdots+\frac{1}{R_{n}}$ ，即等效电导为 $G=G_1+G_2+\cdots+G_n$</p>
+<h3 id="1-6-2-理想电源的等效变换"><a href="#1-6-2-理想电源的等效变换" class="headerlink" title="1.6.2 理想电源的等效变换"></a>1.6.2 理想电源的等效变换</h3><ol>
+<li><p>电压源的<strong>串联</strong>及等效</p>
+<img src="doc/image-20210602190735828.png" alt="image-20210602190735828" style="zoom: 50%;" /> </li>
+<li><p>电流源的<strong>并联</strong>及等效</p>
+<img src="doc/image-20210602190835138.png" alt="image-20210602190835138" style="zoom:50%;" /></li>
+<li><p>电压源与元件的并联（并联的元件可以去掉）</p>
+<img src="doc/image-20210602191038417.png" alt="image-20210602191038417" style="zoom:50%;" /></li>
+<li><p>电流源与元件的串联（串联的元件可以去掉）</p>
+<img src="doc/image-20210602191117845.png" alt="image-20210602191117845" style="zoom:50%;" /></li>
+<li><p><strong>举例</strong>：</p>
+<img src="doc/image-20210602191209091.png" alt="image-20210602191209091" style="zoom:50%;" /></li>
 </ol>
-<h6 id="模-2-取余"><a href="#模-2-取余" class="headerlink" title="模 2 取余"></a>模 2 取余</h6><p><img src="doc/image-20210313104608287.png" alt="image-20210313104608287">    </p>
+<h3 id="1-6-3-实际电源两种模型的等效变换"><a href="#1-6-3-实际电源两种模型的等效变换" class="headerlink" title="1.6.3 ==实际电源两种模型的等效变换=="></a>1.6.3 ==实际电源两种模型的等效变换==</h3><p><img src="doc/image-20210602191605793.png" alt="image-20210602191605793"></p>
+<p><strong>等效变化条件</strong>：<img src="doc/image-20210602191632925.png" alt="image-20210602191632925" style="zoom:50%;" /></p>
+<h2 id="1-7-电位的概念"><a href="#1-7-电位的概念" class="headerlink" title="1.7 电位的概念"></a>1.7 电位的概念</h2><p>电路中某点<strong>电位</strong>指的是该点与<u>参考点之间</u>的<strong>电压</strong> </p>
+<p>电路中有且只有一个参考点，通常选择接地的点作为<strong>参考点</strong></p>
+<p>利用电位可以将电路简化</p>
+<h2 id="1-8-支路电流分析法（重点看ppt例题）"><a href="#1-8-支路电流分析法（重点看ppt例题）" class="headerlink" title="1.8 ==支路电流分析法（重点看ppt例题）=="></a>1.8 ==支路电流分析法（重点看ppt例题）==</h2><p>以<u>支路电流为<strong>求解变量</strong></u>的分析方法为支路电流分.0.析法</p>
+<p>单独的一条电流源或者电压源<strong>不算</strong>支路</p>
+<p>假设电路具有 n 个节点，b 条支路，则应根据基尔霍夫定律列出 b 个独立方程，其过程如下</p>
+<ol>
+<li>标出每个支路电流以及参考方向</li>
+<li>根据 KCL 列出 <strong>n - 1</strong> 个独立的<strong>节点电流方程</strong></li>
+<li>选定所有<strong>独立回路</strong>并指定回路的绕行方向，再根据 KVL 列出 <strong>b - (n - 1)</strong> 个<strong>回路电压方程</strong></li>
+<li>求解</li>
+</ol>
+<h2 id="1-9-节点分析法（重点看ppt例题）"><a href="#1-9-节点分析法（重点看ppt例题）" class="headerlink" title="1.9 ==节点分析法（重点看ppt例题）=="></a>1.9 ==节点分析法（重点看ppt例题）==</h2><p>在电路中任选一个节点作为参考节点（设此节点电位为零），则其他节点到参考节点的电压称为该节点的节点电压</p>
+<p>以<u>节点电压为<strong>未知量</strong></u>，将各支路电流用节点电压表示</p>
+<p>利用 KCL 列出独立的电流方程求解</p>
+<ol>
+<li>用节点电位表示出各个支路电流，得到 b 个支路电流方程</li>
+<li>对独立节点（节点数减一）列出 <strong>n - 1</strong> 个 KCL 方程</li>
+<li>求解</li>
+</ol>
+<h2 id="1-10-叠加定理"><a href="#1-10-叠加定理" class="headerlink" title="1.10 叠加定理"></a>1.10 叠加定理</h2><p>在线性电路中，由多个独立电源共同作用在某一支路产生的电压（或电流）等于电路中每个<strong>独立电源单独作用</strong>在该支路产生的电压（或电流）的<strong>代数和</strong></p>
+<p>叠加原理只适用于线性电路</p>
+<p>线性电路的电流/电压均可用叠加定理进行运算，但是功率不行</p>
+<p>不作用电源的处理：</p>
 <ul>
-<li>101001000 为移位后的信息码</li>
-<li>1101 为除数</li>
-<li>模 2 取余，以四位数据为一组进行运算</li>
-<li>第一步：1010最高的四位 除 1101，由于 1010 的最高位为 1，则得到的商为 1，剩下的三位 1<u>010</u> （下划线部分） 和除数 1<u>101</u> 的剩下三位（下划线部分）进行异或运算，得到模 <u>111</u>，然后最低位由信息码补充下来，得到1110</li>
-<li>第二步同上</li>
-<li>遇到模的最高位为 0，则该处的商为 0</li>
-<li>以此类推，最后得到 3 位的校验码</li>
+<li>电压源不作用，相当于短路</li>
+<li>电流源不作用，相当于断路</li>
 </ul>
+<h2 id="1-11-等效电源定理"><a href="#1-11-等效电源定理" class="headerlink" title="1.11 等效电源定理"></a>1.11 等效电源定理</h2><p>把待求支路从网络中拉出来，把它看作外部电路，其余部分则是线性有源单口网络</p>
+<p>等效电源模型为电压源模型——戴维南定理</p>
+<p>等效电源模型为电流源模型——诺顿定理</p>
+<h3 id="1-11-1-戴维南定理"><a href="#1-11-1-戴维南定理" class="headerlink" title="1.11.1 戴维南定理"></a>1.11.1 戴维南定理</h3><p>任意一个线性有源单口网络，就其对外部电路的作用而言，总可以用一个<strong>理想电压源和一个电阻串联</strong>的支路来等效，如图：</p>
+<p>运用：</p>
+<ol>
+<li>用叠加定理逐步计算<u>开路</u>电压</li>
+</ol>
+<p><img src="doc/image-20210331145823364.png" alt="image-20210331145823364"></p>
+<p>则伏安关系为：$U=U_{\mathrm{OC}}-R_{\mathrm{O}} I$</p>
+<h3 id="1-11-2-诺顿定理"><a href="#1-11-2-诺顿定理" class="headerlink" title="1.11.2 诺顿定理"></a>1.11.2 诺顿定理</h3><p>任何一个有源二端线性网络都可以用一个<strong>电流源和电阻的并联</strong>来等效代替。</p>
+<p>运用：</p>
+<ol>
+<li>计算短路电流（可以用节点法）</li>
+</ol>
+<h2 id="1-12-含受控源的电阻电路"><a href="#1-12-含受控源的电阻电路" class="headerlink" title="1.12 含受控源的电阻电路"></a>1.12 含受控源的电阻电路</h2><h3 id="1-12-1-受控电源"><a href="#1-12-1-受控电源" class="headerlink" title="1.12.1 受控电源"></a>1.12.1 受控电源</h3><p>电压源的电压和电流源的电流受到同一电路中其他支路的电压或电流控制的电源称为<strong>受控源</strong></p>
+<p>受控源用<strong>菱形符号</strong>表示</p>
+<p>借助于受控源能得到幽怨电子元器件（如晶体三极管、运算放大器等）的电路模型</p>
+<p>根据受控源支路是开路还是短路，以及控制电路是电压源还是电流源，可以将受控源分成 4 种类型：</p>
+<p><img src="doc/image-20210603205538839.png" alt="image-20210603205538839"></p>
+<h3 id="1-12-2-含受控源电阻电路的分析"><a href="#1-12-2-含受控源电阻电路的分析" class="headerlink" title="1.12.2 含受控源电阻电路的分析"></a>1.12.2 含受控源电阻电路的分析</h3><p>在对受控源电路进行等效时，应在电路种<strong>保留控制量支路</strong></p>
+<p>对受控源使用叠加定理时必须保留受控源</p>
 
       </section>
 
@@ -252,8 +277,8 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/1.%20%20%E7%9B%B4%E6%B5%81%E7%94%B5%E8%B7%AF/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">模电笔记（直流电路）</h2>
+        <a href="/2021/11/05/Git%E5%AD%A6%E4%B9%A0/git%20%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">git 常见问题</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -267,7 +292,7 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/3.%20%20%E6%AD%A3%E5%BC%A6%E7%A8%B3%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90/" itemprop="url">
+        <a href="/2021/11/05/%E6%A8%A1%E7%94%B5/3.%20%20%E6%AD%A3%E5%BC%A6%E7%A8%B3%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">模电笔记（正弦稳态电路的分析）</h2>
         </a>
       

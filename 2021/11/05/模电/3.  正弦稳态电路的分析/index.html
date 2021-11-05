@@ -24,7 +24,7 @@
 
   
 
-  <title>计算机组成原理笔记（第五章） | Li&#39;s blog</title>
+  <title>模电笔记（正弦稳态电路的分析） | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">计算机组成原理笔记（第五章）</h1>
+          <h1 class="title-wrap">模电笔记（正弦稳态电路的分析）</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -111,7 +111,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">🏷️ 计算机组成原理</a></li>
+    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
   
 </ul>
         </div>
@@ -135,201 +135,121 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="第五章-存储体系"><a href="#第五章-存储体系" class="headerlink" title="第五章 存储体系"></a>第五章 存储体系</h1><p>[TOC]</p>
-<h2 id="5-1-存储体系概论"><a href="#5-1-存储体系概论" class="headerlink" title="5.1 存储体系概论"></a>5.1 存储体系概论</h2><h3 id="5-1-1-存储器的分类"><a href="#5-1-1-存储器的分类" class="headerlink" title="5.1.1 存储器的分类"></a>5.1.1 存储器的分类</h3><h4 id="按存储介质分类"><a href="#按存储介质分类" class="headerlink" title="按存储介质分类"></a>按存储介质分类</h4><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>常见的器件</th>
-<th>常用性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>半导体存储器</td>
-<td>双极性和 MOS 型半导体继承电路存储器</td>
-<td>常用</td>
-</tr>
-<tr>
-<td>磁存储器</td>
-<td>磁芯、磁膜、磁盘存储器等</td>
-<td>常用</td>
-</tr>
-<tr>
-<td>光存储器</td>
-<td>光盘</td>
-<td>常用</td>
-</tr>
-<tr>
-<td>纸带存储器</td>
-<td>暂无</td>
-<td>不常用</td>
-</tr>
-</tbody></table>
-<h4 id="按存取方式分类"><a href="#按存取方式分类" class="headerlink" title="按存取方式分类"></a>按存取方式分类</h4><ol>
-<li><strong>RAM</strong> 随机读写存储器 （通过指令可以随机地、按地址地对各个存储单元访问，断电后信息不能保存，如主存储器）</li>
-<li><strong>ROM</strong> 只读存储器（断电后仍能保存信息）</li>
-<li>CAM 相联存储器（访问的时候是通过它的部分内容而不是地址进行检索）</li>
-<li>SAS 顺序存储器（存取时间和存储单元的物理位置有关，如<strong>磁带</strong>）</li>
-<li>DAS 直接存取存储器（存取时间和存储单元的物理位置有关，根据地址编码的部分信息找到信息的所在范围，再进行顺序检索，如<strong>磁盘</strong>、<strong>磁鼓存储器</strong>，能长久保存信息）</li>
-</ol>
-<h3 id="5-1-2-存储器的层次结构"><a href="#5-1-2-存储器的层次结构" class="headerlink" title="5.1.2 存储器的层次结构"></a>5.1.2 存储器的层次结构</h3><p><img src="doc/image-20210406155631006.png" alt="存储器的速度">    </p>
-<p>约上层越快</p>
-<p>Cache 为高速缓存</p>
-<p>存储系统的层次结构主要有两个，一个是<u>高速缓冲存储器和主存层次</u>，另一个是<u>主存和辅存层次</u></p>
-<h4 id="高速缓冲存储器和主存层次"><a href="#高速缓冲存储器和主存层次" class="headerlink" title="高速缓冲存储器和主存层次"></a>高速缓冲存储器和主存层次</h4><p>主要解决 CPU 和主存速度不匹配的问题</p>
-<p>解决方法：1.将主存储器划分为若干个模块，采用多模块交叉存储技术，</p>
-<p>​                 2.在 CPU 和主存之间增加高速缓冲存储器</p>
-<h4 id="主存和辅存层次"><a href="#主存和辅存层次" class="headerlink" title="主存和辅存层次"></a>主存和辅存层次</h4><p>主要解决存储系统的容量问题</p>
-<p>采用虚拟存储技术，把常用的、容量较小的信息放在速度块的主存中，其余的放在辅存里，由辅助硬件和操作系统调度</p>
-<h4 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h4><p><img src="doc/image-20210406161444648.png" alt="存储系统层次结构"></p>
+        <h1 id="正弦稳态电路的分析"><a href="#正弦稳态电路的分析" class="headerlink" title="正弦稳态电路的分析"></a>正弦稳态电路的分析</h1><h2 id="3-1-正弦交流电的基本概念"><a href="#3-1-正弦交流电的基本概念" class="headerlink" title="3.1 正弦交流电的基本概念"></a>3.1 正弦交流电的基本概念</h2><p>正弦交流电瞬时值的一般表达式为：<br>$$<br>u=U_msin(\omega t+\theta_u)\<br>i=I_msin(\omega t+\theta_i)<br>$$<br>可见，每个正弦量包含三个基本要素：</p>
 <ol>
-<li>CPU 先访问 Cache，如果 Cache 中没有所需内容，则通过辅助硬件到主存中找</li>
-<li>如果主存中没有，则通过辅助硬件或软件到赋存中找</li>
-<li>把找到的数据放入相应的存储器中</li>
+<li>最大值 / 幅值（$U_m$、$I_m$）</li>
+<li>角频率 $\omega$</li>
+<li>初相位（$\theta_u$、$\theta_i$）</li>
 </ol>
-<h2 id="5-2-主存储器"><a href="#5-2-主存储器" class="headerlink" title="5.2 主存储器"></a>5.2 主存储器</h2><h3 id="5-2-1-主存储器的性能指标"><a href="#5-2-1-主存储器的性能指标" class="headerlink" title="5.2.1 主存储器的性能指标"></a>5.2.1 主存储器的性能指标</h3><p>性能指标主要有：存储容量、速度、价格</p>
-<h4 id="存储容量"><a href="#存储容量" class="headerlink" title="存储容量"></a>存储容量</h4><p>若干<u>存储位元</u>（存放了一位二进制信息）组成一个<u>存储单元</u></p>
-<p>存储单元有编号，即<u>地址</u>，相邻存储单元的地址是连续的，是<strong>最小的可编址单元</strong></p>
-<p>存储器中存储单元的<u>位数</u>都是相同的</p>
-<p>8 个二级制位为一个<strong>字节</strong>，若干个字节再组合成<strong>字</strong>，一个字所包含的二进制位数称为<strong>字长</strong></p>
-<p><strong>存储容量</strong>指的是所能容纳的二进制信息的总量，通常用<u>存储单元数</u> * <u>每个单元的位数</u>来表示，如：$存储容量=存储字数（存储单元数）\times字长$</p>
-<p>常用的容量单位为 KB(2<sup>10</sup> B)、MB(2<sup>20</sup> B)、GB(2<sup>30</sup> B)</p>
-<p>存储器地址码的<u>位数</u>决定了主存可<strong>直接寻址</strong>的最大空间。例如：存储器有 n 位地址码，经地址译码器译码后，可以访问 2<sup>n</sup> 个存储单元。因此，可以根据存储器提供的地址线和数据线的数目计算容量，例如：地址线12，数据线16，则容量为 $2^{12}\times16$，即 $4K\times16$ 位</p>
-<h4 id="存储器的速度"><a href="#存储器的速度" class="headerlink" title="存储器的速度"></a>存储器的速度</h4><p>取数时间 t<sub>A</sub>；存储周期 t<sub>C</sub></p>
-<p>$t_A&lt;t_c$</p>
-<h3 id="5-2-2-主存储器的工作原理"><a href="#5-2-2-主存储器的工作原理" class="headerlink" title="5.2.2 主存储器的工作原理"></a>5.2.2 主存储器的工作原理</h3><h3 id="5-2-3-RAM-随机读写存储器"><a href="#5-2-3-RAM-随机读写存储器" class="headerlink" title="5.2.3 RAM 随机读写存储器"></a>5.2.3 <strong>RAM</strong> 随机读写存储器</h3><h4 id="半导体存储芯片的基本结构"><a href="#半导体存储芯片的基本结构" class="headerlink" title="半导体存储芯片的基本结构"></a>半导体存储芯片的基本结构</h4><p><img src="doc/image-20210406195706490.png" alt="半导体存储芯片的基本结构">    </p>
+<p>交流电的<strong>有效值</strong>：</p>
+<p>与交流电热效应想等的直流电定义为该交流电的有效值，用大写字母 I、U 表示<br>$$<br>RI^2=\frac1T\int^T_0Ri^2dt\Rightarrow I=\sqrt{\frac1T\int^T_0i^2dt}<br>$$<br>将 正弦函数 i （交流电）带入公式可得：<br>$$<br>I_m=\sqrt2 I\<br>U_m=\sqrt2I<br>$$<br>相位差 $\phi=\theta_u-\theta_i=0^0$ 时，电压与电流相同；$\phi=\theta_u-\theta_i=180^0$ 时，电压与电流相反</p>
+<h2 id="3-2-正弦量的相量表示"><a href="#3-2-正弦量的相量表示" class="headerlink" title="3.2 正弦量的相量表示"></a>3.2 正弦量的相量表示</h2><p><strong>旋转矢量法</strong>：</p>
+<p>在平面坐标上的一个旋转矢量可以表示出正弦量的三个要素</p>
+<p>设正弦量为 $u=U_msin(\omega t+\theta)$</p>
+<ul>
+<li>该旋转的矢量在 y 轴上投影的长度即为正弦量的值</li>
+<li>矢量与 x 轴的夹角为初相位</li>
+</ul>
+<p><img src="doc/image-20210616152555582.png" alt="image-20210616152555582"></p>
+<p>采用复数坐标 $A=a+jb$ ，a 为实部，b 为虚部</p>
+<p>复数的模 $|A|=\sqrt{a^2+b^2}$</p>
+<p>复数的幅角 $\theta =arctan\frac ba$</p>
+<p>实部 $a=|A|cos\theta$</p>
+<p>虚部 $b=|A|sin\theta$</p>
+<p><strong>瞬时值</strong>：<br>$$<br>u(t)=U_msin(\omega t+\theta)=\sqrt2Usin(\omega t+\theta)<br>$$<br>可以表示为：有效值向量 $\dot{U}=U \angle \theta$ 或者 $\dot{U}=Ue^{j\theta}$</p>
+<p>相量是一个与时间无关的复值常数，所以它可以表示正弦量，但不等于正弦量</p>
+<h2 id="3-3-基尔霍夫定律的相量表示"><a href="#3-3-基尔霍夫定律的相量表示" class="headerlink" title="3.3 基尔霍夫定律的相量表示"></a>3.3 基尔霍夫定律的相量表示</h2><p>$$<br>\sum\dot I=0\<br>\sum\dot U=0<br>$$</p>
+<h2 id="3-4-三种基本元件伏安关系的相量表示"><a href="#3-4-三种基本元件伏安关系的相量表示" class="headerlink" title="3.4 三种基本元件伏安关系的相量表示"></a>3.4 三种基本元件伏安关系的相量表示</h2><h3 id="3-4-1-电阻元件"><a href="#3-4-1-电阻元件" class="headerlink" title="3.4.1 电阻元件"></a>3.4.1 电阻元件</h3><p>电压与电流的关系可以表示为 $\dot U=R\dot I$</p>
+<p>设 $i=\sqrt2Isin\omega t$</p>
+<p>则 $u=\sqrt2RIsin\omega t$</p>
 <ol>
-<li>存储矩阵：由大量相同的<strong>位存储单元</strong>阵列构成</li>
-<li>译码驱动：将来自地址总线的<strong>地址信号</strong>翻译成应存储单元的<strong>选通信号</strong>，该信号在读写电路的配合下完成对被选中单元的读/写操作</li>
-<li>读写电路：包括读出放大器和写入电路，用来完成读/写操作</li>
-<li>读/写控制线：决定芯片进行读/写操作</li>
-<li>片选线：确定哪个存储芯片被选中，可用于容量扩容</li>
-<li>地址线：是单向输入的，其位数与存储字的个数有关</li>
-<li>数据线：是双向的，其位数与读出或写入的数据位数有关</li>
-<li>数据线数和地址线数共同反映存储芯片容量的大小</li>
+<li>频率相同</li>
+<li>有效值 $U=RI$</li>
+<li>相位关系为 $\theta_u=\theta_i$</li>
 </ol>
-<h4 id="半导体随机存取存储器"><a href="#半导体随机存取存储器" class="headerlink" title="半导体随机存取存储器"></a>半导体随机存取存储器</h4><table>
-<thead>
-<tr>
-<th align="center">特点 \ 类型</th>
-<th align="center">SRAM 静态随机存储器</th>
-<th align="center">DRAM 动态随机存储器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">存储信息</td>
-<td align="center">触发器（双稳态，稳定存储0/1）</td>
-<td align="center">电容（充放电）</td>
-</tr>
-<tr>
-<td align="center">破坏性读出</td>
-<td align="center">非（读：查看触发器状态；写：改变触发器状态）</td>
-<td align="center">是（读：连接电容，检测电流变化；写：给电容放电）</td>
-</tr>
-<tr>
-<td align="center">需要刷新</td>
-<td align="center">不要（能保持两种稳定的状态）</td>
-<td align="center">需要（电容上的电荷只能维持  2ms）</td>
-</tr>
-<tr>
-<td align="center">送行列地址</td>
-<td align="center">同时送</td>
-<td align="center">分两次送（地址线复用，线数减少一半）</td>
-</tr>
-<tr>
-<td align="center">运行速度</td>
-<td align="center">快</td>
-<td align="center">慢</td>
-</tr>
-<tr>
-<td align="center">集成度</td>
-<td align="center">低（6 个逻辑元件构成）</td>
-<td align="center">高（1 或者 3 个逻辑元件）</td>
-</tr>
-<tr>
-<td align="center">发热量</td>
-<td align="center">大</td>
-<td align="center">小</td>
-</tr>
-<tr>
-<td align="center">存储成本</td>
-<td align="center">高</td>
-<td align="center">低</td>
-</tr>
-</tbody></table>
-<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><ol>
-<li>都以电信号的形式存储 0/1，断电就丢失信息，为易失性存储器</li>
-<li>SRAM 常用作 Cache，DRAM 常用作主存</li>
-</ol>
-<p>后期结合发展为 <u>SDRAM 同步动态随机存储器</u></p>
-<h5 id="DRAM-的刷新"><a href="#DRAM-的刷新" class="headerlink" title="DRAM 的刷新"></a>DRAM 的刷新</h5><ol>
-<li><p>刷新周期为 2ms</p>
-</li>
-<li><p>只传<strong>行地址</strong>，以行为单位，每次刷新一行存储单元 （DRAM 的行、列地址等长）</p>
-</li>
-<li><p>由硬件支持，读出一行的信息后重新写入，占用 1 个读/写周期</p>
-</li>
-<li><p><strong>什么时候刷新？</strong></p>
-<p> 假设 DRAM 内部结构排列成 128 ✖ 128 的形式，存储周期（读/写周期）为 0.5us，则一个刷新周期内有 2ms / 0.5us = 4000 个周期。<u>思路一，<strong>分散刷新</strong></u>：每次读写玩就刷新一行 –&gt; 系统的存储周期变为 1us，即前 0.5 us 用于正常读写，后 0.5 us 用于刷新某行。<u>思路二，<strong>集中刷新</strong></u>：2ms 内集中安排时间全部刷新 –&gt; 系统的存取周期还是 0.5us，留一段时间专门用于刷新，称为<em>访问“死区”</em>。<u>思路三，<strong>异步刷新</strong></u>：2ms 内每行刷新 1 次即可 –&gt; 2ms 内需要产生 128 次刷新请求，每隔 2ms / 128 =15.6us 一次，每 15.6us 内有 0.5 us 的死区</p>
-</li>
-</ol>
-<p><img src="doc/image-20210406204344029.png" alt="DRAM的刷新"></p>
-<p><img src="doc/image-20210406205040831.png" alt="image-20210406205040831">    </p>
-<h3 id="5-2-4-ROM-只读存储器"><a href="#5-2-4-ROM-只读存储器" class="headerlink" title="5.2.4 ROM 只读存储器"></a>5.2.4 ROM 只读存储器</h3><p>主要有</p>
+<h3 id="3-4-2-电感元件"><a href="#3-4-2-电感元件" class="headerlink" title="3.4.2 电感元件"></a>3.4.2 电感元件</h3><p>电压与电流的关系<br>$$<br>u=L\frac{di}{dt}<br>$$</p>
+<p>设 $i=\sqrt2Isin\omega t$</p>
+<p>则 $u=\sqrt2Usin(\omega t+90^o)$</p>
 <ol>
-<li><p>MROM 掩模式只读存储器</p>
+<li><p>频率相同</p>
 </li>
-<li><p>PROM 可编程只读存储器</p>
+<li><p>有效值 $U=\omega LI$</p>
+<p>定义 $X_L=\omega L=2\pi fL$</p>
+<p>则 $U=X_L I$</p>
 </li>
-<li><p>EPROM 光擦除可编程只读存储器 和 E<sup>2</sup>PROM 电擦除可编程只读存储器</p>
-</li>
-<li><p>Flash Memory 闪速存储器</p>
-</li>
-<li><p>固态硬盘</p>
+<li><p>电压超前电流 $90^0$</p>
 </li>
 </ol>
-<p>  <img src="doc/image-20210407104520704.png" alt="几种非易失性存储器的比较"></p>
-<h2 id="5-3-主存储器与-CPU-的连接"><a href="#5-3-主存储器与-CPU-的连接" class="headerlink" title="5.3 主存储器与 CPU 的连接"></a>5.3 主存储器与 CPU 的连接</h2><p>主存基本包括两个部分，即 ROM 和 RAM</p>
-<h3 id="5-3-1-存储器芯片介绍"><a href="#5-3-1-存储器芯片介绍" class="headerlink" title="5.3.1 存储器芯片介绍"></a>5.3.1 存储器芯片介绍</h3><p><img src="doc/image-20210407120303196.png" alt="典型存储器芯片封装"></p>
-<p>SRAM：工作电压 V<sub>CC</sub>；接地端 GND；片选线 $\overline{CS}$；读写控制信号$\overline{WE}$ </p>
-<p>DRAM：在 SRAM 拥有的引脚的基础上加上</p>
-<p>​              行地址选通信号 $\overline{RAS}$；列地址选通信号 $\overline{CAS}$</p>
-<p>ROM：程序电压 V<sub>PP</sub>；无读写控制信号$\overline{WE}$WE</p>
-<p>为了与主存连接，CPU 提供了<u>地址线</u>、<u>数据线</u>、<u>访存控制信号</u>$\overline{MREQ}$和<u>读/写控制信号</u> $R/\overline{W}$等</p>
-<h3 id="5-3-2-存储容量的扩展"><a href="#5-3-2-存储容量的扩展" class="headerlink" title="5.3.2 存储容量的扩展"></a>5.3.2 存储容量的扩展</h3><h4 id="位扩展"><a href="#位扩展" class="headerlink" title="位扩展"></a>位扩展</h4><p><img src="doc/image-20210407140412220.png" alt="位扩展"></p>
-<p>8 个 8K × 1 位的存储芯片连在一起可以做成 1 个 8K × 8 位的存储芯片</p>
-<p><img src="doc/image-20210407140150271.png" alt="位扩展"></p>
-<h4 id="字扩展"><a href="#字扩展" class="headerlink" title="字扩展"></a>字扩展</h4><p>线选法</p>
-<p><img src="doc/image-20210412202032408.png" alt="image-20210412202032408"></p>
-<p>译码片选法</p>
-<p><img src="doc/image-20210412203032013.png" alt="image-20210412203032013"></p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><table>
-<thead>
-<tr>
-<th align="center">线选法</th>
-<th align="center">译码器片选法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">n 条线 $\rightarrow$ n 个选片信号</td>
-<td align="center">n 条线 $\rightarrow$ 2<sup>n</sup> 个选片信号</td>
-</tr>
-<tr>
-<td align="center">电路简单</td>
-<td align="center">电路复杂</td>
-</tr>
-<tr>
-<td align="center">地址空间不连续</td>
-<td align="center">地址空间可连续，可以增加逻辑设计</td>
-</tr>
-</tbody></table>
-<h4 id="字位同时扩展"><a href="#字位同时扩展" class="headerlink" title="字位同时扩展"></a>字位同时扩展</h4><p><img src="doc/QQ%E5%9B%BE%E7%89%8720210413140654.png"></p>
-<h3 id="5-3-3-例题"><a href="#5-3-3-例题" class="headerlink" title="5.3.3 例题"></a>5.3.3 例题</h3><p><img src="doc/image-20210413141054493.png" alt="image-20210413141054493"></p>
-<p>解：<img src="doc/QQ%E5%9B%BE%E7%89%8720210413143308.jpg" alt="QQ图片20210413143308"></p>
-<p><img src="doc/image-20210413211051332.png" alt="image-20210413211051332"></p>
-<h2 id="5-4-高速存储器"><a href="#5-4-高速存储器" class="headerlink" title="5.4 高速存储器"></a>5.4 高速存储器</h2><h3 id="5-4-1-双端口存储器"><a href="#5-4-1-双端口存储器" class="headerlink" title="5.4.1 双端口存储器"></a>5.4.1 双端口存储器</h3><p>双端口存储器是指，同一个存储器拥有<strong>两组</strong>相互独立的读/写控制线路，允许<strong>两个独立</strong>的 CPU 或控制器<strong>异步</strong>地访问存储单元</p>
-<p>双端口 RAM 是一种常用的双端口存储器，其最大的特点是存储数据可以共享</p>
+<p>$X_L$ 称为电感电抗，简称<strong>感抗</strong>，单位为欧姆</p>
+<p>定义<br>$$<br>X_L=\omega L=2\pi fL<br>$$</p>
+<p>则 $U=X_L I$</p>
+<p>$$<br>\dot U=j\omega L\dot I=jX_L\dot I<br>$$</p>
+<p>这是电感电路中欧姆定律的相量形式，既表示了电压与电流有效值之间的关系，也反映了两者之间的相位差 </p>
+<h3 id="3-4-3-电容元件"><a href="#3-4-3-电容元件" class="headerlink" title="3.4.3 电容元件"></a>3.4.3 电容元件</h3><p>电流与电压的关系<br>$$<br>i=\frac{dq}{dt}=C\frac{du}{dt}<br>$$<br>若<br>$$<br>U=\sqrt2Usin\omega t<br>$$<br>则<br>$$<br>i=\sqrt2U\omega Csin(\omega t+90^o)<br>$$</p>
+<ol>
+<li>频率相同</li>
+<li>有效值 $I=\omega CU$</li>
+<li>电流超前电压 $90^o$</li>
+</ol>
+<p>因为 $U=\frac1{\omega C}I$</p>
+<p>定义 $X_C=\frac1{\omega C}=\frac1{2\pi fC}$</p>
+<p>则 $U=X_CI$</p>
+<p>$X_C$ 称为电容电抗，简称为容抗，单位为欧姆</p>
+<p>用相量的形式写出电容电压与电流的之间的关系为<br>$$<br>\dot U=-jX_C\dot I=-j\frac1{\omega C}\dot I=\frac{1}{j\omega C}\dot I<br>$$</p>
+<h3 id="3-4-4-小结"><a href="#3-4-4-小结" class="headerlink" title="3.4.4 小结"></a>3.4.4 小结</h3><p><img src="doc/image-20210618135535883.png" alt="image-20210618135535883"></p>
+<h2 id="3-5-简单正弦交流电路"><a href="#3-5-简单正弦交流电路" class="headerlink" title="3.5 简单正弦交流电路"></a>3.5 简单正弦交流电路</h2><h3 id="3-5-1-RLC-串流交流电路"><a href="#3-5-1-RLC-串流交流电路" class="headerlink" title="3.5.1 RLC 串流交流电路"></a>3.5.1 RLC 串流交流电路</h3><p><img src="doc/image-20210618172014355.png" alt="image-20210618172014355"></p>
+<p>设电流<br>$$<br>i=\sqrt2I sin\omega t<br>$$</p>
+<p>则<br>$$<br>u_R=\sqrt2 RIsin(\omega t)\<br>u_L=\sqrt2 \omega LIsin(\omega t+90^o)\<br>u_C=\sqrt2 \frac1{\omega C}I sin(\omega t-90^o)<br>$$<br>对应的相量形式为<br>$$<br>\dot I=I\ang0^o\quad\dot U_R=R\dot I\<br>\dot U_L=jX_L\dot I\quad \dot U_C=-jX_C\dot I<br>$$<br>由 KVL 可得<br>$$<br>\begin{aligned}<br>&amp;\dot{U}=\dot{U}<em>{\mathrm{R}}+\dot{U}</em>{\mathrm{L}}+\dot{U}<em>{\mathrm{C}}=R \dot{I}+\mathrm{j} X</em>{\mathrm{L}} \dot{I}-\mathrm{j} X_{\mathrm{C}} \dot{I} \<br>&amp;=\left[R+\mathrm{j}\left(X_{\mathrm{L}}-X_{\mathrm{C}}\right)\right] \dot{I}=(R+\mathrm{j} X) \dot{I} \<br>&amp;=Z \dot{I}<br>\end{aligned}<br>$$<br>其中<br>$$<br>X=X_L-X_C<br>$$<br>是感抗与容抗之差，称为<strong>电抗</strong>，单位为欧姆</p>
+<p>而<br>$$<br>Z=R+j(X_L-X_C)=R+JX<br>$$<br>称为<strong>复阻抗</strong>，简称<strong>阻抗</strong>，实部为电阻，虚部为电抗</p>
+<p>复阻抗的模<br>$$<br>|Z|=\sqrt{R^2+X^2}=\sqrt{R^2+(\omega L-\frac1{\omega C})^2}<br>$$<br>复阻抗的辐角称为阻抗角<br>$$<br>\phi=arctan\frac XR<br>$$<br>R，X，|Z| 三者之间构成的直角三角形，称为阻抗三角形，如图</p>
+<img src="doc/image-20210619100655128.png" alt="image-20210619100655128" style="zoom:50%;" />
+$$
+Z=\frac{\dot U}{\dot I}=\frac UI\ang\theta_u-\theta_i
+$$
+感性电路：
 
+<ul>
+<li>当 $X_L &gt;X_C$ 时，$X&gt;0，\phi&gt;0$，电压超前电流，电路呈电感性</li>
+</ul>
+<p>容性电路：</p>
+<ul>
+<li>当 $X_L &lt;X_C$ 时，$X&lt;0，\phi&lt;0$，电压滞后电流，电路呈电容性</li>
+</ul>
+<p>电阻性电路：</p>
+<ul>
+<li>当 $X_L =X_C$ 时，$X=0，\phi=0$，电压与电流同相，电路呈电阻性</li>
+</ul>
+<h3 id="3-5-2-阻抗的串并联"><a href="#3-5-2-阻抗的串并联" class="headerlink" title="3.5.2 阻抗的串并联"></a>3.5.2 阻抗的串并联</h3><h4 id="阻抗的串联"><a href="#阻抗的串联" class="headerlink" title="阻抗的串联"></a>阻抗的串联</h4><p>$$<br> \dot U=(Z_1+Z_2\dot I)<br>$$</p>
+<p>分压公式为<br>$$<br>\dot U_1=\frac{Z_1}{Z_1+Z_2}\dot U\quad\quad\dot U_2=\frac{Z_2}{Z_1+Z_2}\dot U<br>$$<br>显然，多个阻抗串联的等效阻抗为<br>$$<br>Z=Z_1+Z_2+Z_3+\cdots<br>$$<br>对应的分压公式<br>$$<br>\dot U_k=\frac{Z_K}{Z}\dot U<br>$$<br><strong>注意</strong>：分电压可以大于总电压（由于虚部的存在）</p>
+<h4 id="阻抗的并联"><a href="#阻抗的并联" class="headerlink" title="阻抗的并联"></a>阻抗的并联</h4><p>$$<br>\dot U=\frac{Z_1Z_2}{Z_!+Z_2}\dot I<br>$$</p>
+<p>分流公式为<br>$$<br>\dot I_1=\frac{Z_2}{Z_1+Z_2}\dot I\quad\quad\dot I_2=\frac{Z_1}{Z_1+Z_2}\dot I<br>$$</p>
+<h4 id="复导纳"><a href="#复导纳" class="headerlink" title="复导纳"></a>复导纳</h4><p>复阻抗的倒数称为<strong>复导纳</strong>，简称<strong>导纳</strong>（Y 的实数部分叫做电导，虚数部分叫做电纳）<br>$$<br>Y=\frac1Z=\frac1{|Z|\angle\phi}=\frac1{|Z|}\angle{-\phi}<br>$$</p>
+<h2 id="3-6-正弦稳态电路的分析"><a href="#3-6-正弦稳态电路的分析" class="headerlink" title="3.6 正弦稳态电路的分析"></a>3.6 正弦稳态电路的分析</h2><p>利用第一章的知识来求解正弦稳态电路</p>
+<h2 id="3-7-正弦稳态电路的功率"><a href="#3-7-正弦稳态电路的功率" class="headerlink" title="3.7 正弦稳态电路的功率"></a>3.7 正弦稳态电路的功率</h2><h3 id="3-7-1-瞬时功率"><a href="#3-7-1-瞬时功率" class="headerlink" title="3.7.1 瞬时功率"></a>3.7.1 瞬时功率</h3><p>设<br>$$<br>i=I_msin(\omega t+\theta_i)\<br>u=U_msin(\omega t+\theta_u)\<br>$$<br>则<br>$$<br>p(t)=ui=2UIsin(\omega t+\theta_u)sin(\omega t+\theta_i)\<br>=UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)<br>$$<br>瞬时功率实际意义不大，通常引用平均功率的概念</p>
+<h3 id="3-7-2-有功功率及功率因数"><a href="#3-7-2-有功功率及功率因数" class="headerlink" title="3.7.2 有功功率及功率因数"></a>3.7.2 有功功率及功率因数</h3><p>平均功率或称<strong>有功功率</strong>，用大写字母 P 表示，单位为瓦<br>$$<br>P=\frac1T\int^T_0pdt=\frac1T[UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)]dt\<br>=UIcos\phi<br>$$<br>$\lambda=cos\phi$ 称为<strong>功率因数</strong></p>
+<p>$\phi$ 称为<strong>功率因数角</strong></p>
+<ul>
+<li>对于纯电阻电路，$P=I^2R$</li>
+<li>对于纯电感电路，$P=0$</li>
+<li>对于纯电容电路，$P=0$</li>
+</ul>
+<p>只有电阻消耗有功功率，动态元件不消耗有功功率</p>
+<h3 id="3-7-3-无功功率和视在功率"><a href="#3-7-3-无功功率和视在功率" class="headerlink" title="3.7.3 无功功率和视在功率"></a>3.7.3 无功功率和视在功率</h3><p><strong>无功功率</strong>用大写字母 Q 表示，单位为乏（var）<br>$$<br>Q=UIsin\phi<br>$$</p>
+<ul>
+<li>对于纯电感电路，$Q=X_LI^2$</li>
+<li>对于纯电容电路，$Q=X_CI^2$</li>
+<li>对于纯电阻电路，$Q=0$</li>
+</ul>
+<p><strong>视在功率</strong>用 S 表示，单位为伏安（VA）<br>$$<br>S=UI<br>$$</p>
+<h3 id="3-7-4-小结"><a href="#3-7-4-小结" class="headerlink" title="3.7.4 小结"></a>3.7.4 小结</h3><p>有功功率、视在功率和无功功率三者之间构成一个功率三角形<br>$$<br>P=UI\cdot cos\phi\<br>Q=S\cdot sin\phi\<br>S=\sqrt{P^2+Q^2}<br>$$<br><img src="doc/image-20210620004930214.png" alt="image-20210620004930214" style="zoom:50%;" /></p>
+<h3 id="3-7-5-功率因数的提高"><a href="#3-7-5-功率因数的提高" class="headerlink" title="3.7.5 功率因数的提高"></a>3.7.5 功率因数的提高</h3><p>$$<br>\lambda=cos\phi=\frac PS<br>$$</p>
+<p>提高功率因数的意义:</p>
+<ol>
+<li>提高电力设备的利用率</li>
+<li>降低传输线路损耗（可以采用并联电容的方法）</li>
+</ol>
+<p><strong>并联电容的确定</strong>：<br>$$<br>C=\frac{P}{\omega U^{2}}\left(\operatorname{tg} \varphi_{1}-\operatorname{tg} \varphi_{2}\right)<br>$$</p>
+<h3 id="3-8-2-串联谐振"><a href="#3-8-2-串联谐振" class="headerlink" title="3.8.2 串联谐振"></a>3.8.2 串联谐振</h3>
       </section>
 
       
@@ -341,8 +261,8 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/2.%20%20%E4%B8%80%E9%98%B6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E6%9A%82%E6%80%81%E5%88%86%E6%9E%90/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">模电笔记（一阶动态电路的暂态分析）</h2>
+        <a href="/2021/11/05/%E6%A8%A1%E7%94%B5/1.%20%20%E7%9B%B4%E6%B5%81%E7%94%B5%E8%B7%AF/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">模电笔记（直流电路）</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -356,8 +276,8 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/Git%E5%AD%A6%E4%B9%A0/git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">git 常用命令</h2>
+        <a href="/2021/11/05/%E6%A8%A1%E7%94%B5/2.%20%20%E4%B8%80%E9%98%B6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E6%9A%82%E6%80%81%E5%88%86%E6%9E%90/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">模电笔记（一阶动态电路的暂态分析）</h2>
         </a>
       
       <div class="card-text--row">Older</div>
