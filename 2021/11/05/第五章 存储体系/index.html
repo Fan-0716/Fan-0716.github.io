@@ -24,7 +24,7 @@
 
   
 
-  <title>firstBlog | Li&#39;s blog</title>
+  <title>计算机组成原理笔记（第五章） | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">firstBlog</h1>
+          <h1 class="title-wrap">计算机组成原理笔记（第五章）</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -106,14 +106,12 @@
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/test/">📒 test</a></li>
+    <li><a href="/categories/%E8%AF%BE%E7%A8%8B/">📒 课程</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/test/">🏷️ test</a></li>
-  
-    <li><a href="/tags/first/">🏷️ first</a></li>
+    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">🏷️ 计算机组成原理</a></li>
   
 </ul>
         </div>
@@ -137,12 +135,220 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="第五章-存储体系"><a href="#第五章-存储体系" class="headerlink" title="第五章 存储体系"></a>第五章 存储体系</h1><p>[TOC]</p>
+<h2 id="5-1-存储体系概论"><a href="#5-1-存储体系概论" class="headerlink" title="5.1 存储体系概论"></a>5.1 存储体系概论</h2><h3 id="5-1-1-存储器的分类"><a href="#5-1-1-存储器的分类" class="headerlink" title="5.1.1 存储器的分类"></a>5.1.1 存储器的分类</h3><h4 id="按存储介质分类"><a href="#按存储介质分类" class="headerlink" title="按存储介质分类"></a>按存储介质分类</h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>常见的器件</th>
+<th>常用性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>半导体存储器</td>
+<td>双极性和 MOS 型半导体继承电路存储器</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>磁存储器</td>
+<td>磁芯、磁膜、磁盘存储器等</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>光存储器</td>
+<td>光盘</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>纸带存储器</td>
+<td>暂无</td>
+<td>不常用</td>
+</tr>
+</tbody></table>
+<h4 id="按存取方式分类"><a href="#按存取方式分类" class="headerlink" title="按存取方式分类"></a>按存取方式分类</h4><ol>
+<li><strong>RAM</strong> 随机读写存储器 （通过指令可以随机地、按地址地对各个存储单元访问，断电后信息不能保存，如主存储器）</li>
+<li><strong>ROM</strong> 只读存储器（断电后仍能保存信息）</li>
+<li>CAM 相联存储器（访问的时候是通过它的部分内容而不是地址进行检索）</li>
+<li>SAS 顺序存储器（存取时间和存储单元的物理位置有关，如<strong>磁带</strong>）</li>
+<li>DAS 直接存取存储器（存取时间和存储单元的物理位置有关，根据地址编码的部分信息找到信息的所在范围，再进行顺序检索，如<strong>磁盘</strong>、<strong>磁鼓存储器</strong>，能长久保存信息）</li>
+</ol>
+<h3 id="5-1-2-存储器的层次结构"><a href="#5-1-2-存储器的层次结构" class="headerlink" title="5.1.2 存储器的层次结构"></a>5.1.2 存储器的层次结构</h3><p><img src="doc/image-20210406155631006.png" alt="存储器的速度">    </p>
+<p>约上层越快</p>
+<p>Cache 为高速缓存</p>
+<p>存储系统的层次结构主要有两个，一个是<u>高速缓冲存储器和主存层次</u>，另一个是<u>主存和辅存层次</u></p>
+<h4 id="高速缓冲存储器和主存层次"><a href="#高速缓冲存储器和主存层次" class="headerlink" title="高速缓冲存储器和主存层次"></a>高速缓冲存储器和主存层次</h4><p>主要解决 CPU 和主存速度不匹配的问题</p>
+<p>解决方法：1.将主存储器划分为若干个模块，采用多模块交叉存储技术，</p>
+<p>​                 2.在 CPU 和主存之间增加高速缓冲存储器</p>
+<h4 id="主存和辅存层次"><a href="#主存和辅存层次" class="headerlink" title="主存和辅存层次"></a>主存和辅存层次</h4><p>主要解决存储系统的容量问题</p>
+<p>采用虚拟存储技术，把常用的、容量较小的信息放在速度块的主存中，其余的放在辅存里，由辅助硬件和操作系统调度</p>
+<h4 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h4><p><img src="doc/image-20210406161444648.png" alt="存储系统层次结构"></p>
+<ol>
+<li>CPU 先访问 Cache，如果 Cache 中没有所需内容，则通过辅助硬件到主存中找</li>
+<li>如果主存中没有，则通过辅助硬件或软件到赋存中找</li>
+<li>把找到的数据放入相应的存储器中</li>
+</ol>
+<h2 id="5-2-主存储器"><a href="#5-2-主存储器" class="headerlink" title="5.2 主存储器"></a>5.2 主存储器</h2><h3 id="5-2-1-主存储器的性能指标"><a href="#5-2-1-主存储器的性能指标" class="headerlink" title="5.2.1 主存储器的性能指标"></a>5.2.1 主存储器的性能指标</h3><p>性能指标主要有：存储容量、速度、价格</p>
+<h4 id="存储容量"><a href="#存储容量" class="headerlink" title="存储容量"></a>存储容量</h4><p>若干<u>存储位元</u>（存放了一位二进制信息）组成一个<u>存储单元</u></p>
+<p>存储单元有编号，即<u>地址</u>，相邻存储单元的地址是连续的，是<strong>最小的可编址单元</strong></p>
+<p>存储器中存储单元的<u>位数</u>都是相同的</p>
+<p>8 个二级制位为一个<strong>字节</strong>，若干个字节再组合成<strong>字</strong>，一个字所包含的二进制位数称为<strong>字长</strong></p>
+<p><strong>存储容量</strong>指的是所能容纳的二进制信息的总量，通常用<u>存储单元数</u> * <u>每个单元的位数</u>来表示，如：$存储容量=存储字数（存储单元数）\times字长$</p>
+<p>常用的容量单位为 KB(2<sup>10</sup> B)、MB(2<sup>20</sup> B)、GB(2<sup>30</sup> B)</p>
+<p>存储器地址码的<u>位数</u>决定了主存可<strong>直接寻址</strong>的最大空间。例如：存储器有 n 位地址码，经地址译码器译码后，可以访问 2<sup>n</sup> 个存储单元。因此，可以根据存储器提供的地址线和数据线的数目计算容量，例如：地址线12，数据线16，则容量为 $2^{12}\times16$，即 $4K\times16$ 位</p>
+<h4 id="存储器的速度"><a href="#存储器的速度" class="headerlink" title="存储器的速度"></a>存储器的速度</h4><p>取数时间 t<sub>A</sub>；存储周期 t<sub>C</sub></p>
+<p>$t_A&lt;t_c$</p>
+<h3 id="5-2-2-主存储器的工作原理"><a href="#5-2-2-主存储器的工作原理" class="headerlink" title="5.2.2 主存储器的工作原理"></a>5.2.2 主存储器的工作原理</h3><h3 id="5-2-3-RAM-随机读写存储器"><a href="#5-2-3-RAM-随机读写存储器" class="headerlink" title="5.2.3 RAM 随机读写存储器"></a>5.2.3 <strong>RAM</strong> 随机读写存储器</h3><h4 id="半导体存储芯片的基本结构"><a href="#半导体存储芯片的基本结构" class="headerlink" title="半导体存储芯片的基本结构"></a>半导体存储芯片的基本结构</h4><p><img src="doc/image-20210406195706490.png" alt="半导体存储芯片的基本结构">    </p>
+<ol>
+<li>存储矩阵：由大量相同的<strong>位存储单元</strong>阵列构成</li>
+<li>译码驱动：将来自地址总线的<strong>地址信号</strong>翻译成应存储单元的<strong>选通信号</strong>，该信号在读写电路的配合下完成对被选中单元的读/写操作</li>
+<li>读写电路：包括读出放大器和写入电路，用来完成读/写操作</li>
+<li>读/写控制线：决定芯片进行读/写操作</li>
+<li>片选线：确定哪个存储芯片被选中，可用于容量扩容</li>
+<li>地址线：是单向输入的，其位数与存储字的个数有关</li>
+<li>数据线：是双向的，其位数与读出或写入的数据位数有关</li>
+<li>数据线数和地址线数共同反映存储芯片容量的大小</li>
+</ol>
+<h4 id="半导体随机存取存储器"><a href="#半导体随机存取存储器" class="headerlink" title="半导体随机存取存储器"></a>半导体随机存取存储器</h4><table>
+<thead>
+<tr>
+<th align="center">特点 \ 类型</th>
+<th align="center">SRAM 静态随机存储器</th>
+<th align="center">DRAM 动态随机存储器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">存储信息</td>
+<td align="center">触发器（双稳态，稳定存储0/1）</td>
+<td align="center">电容（充放电）</td>
+</tr>
+<tr>
+<td align="center">破坏性读出</td>
+<td align="center">非（读：查看触发器状态；写：改变触发器状态）</td>
+<td align="center">是（读：连接电容，检测电流变化；写：给电容放电）</td>
+</tr>
+<tr>
+<td align="center">需要刷新</td>
+<td align="center">不要（能保持两种稳定的状态）</td>
+<td align="center">需要（电容上的电荷只能维持  2ms）</td>
+</tr>
+<tr>
+<td align="center">送行列地址</td>
+<td align="center">同时送</td>
+<td align="center">分两次送（地址线复用，线数减少一半）</td>
+</tr>
+<tr>
+<td align="center">运行速度</td>
+<td align="center">快</td>
+<td align="center">慢</td>
+</tr>
+<tr>
+<td align="center">集成度</td>
+<td align="center">低（6 个逻辑元件构成）</td>
+<td align="center">高（1 或者 3 个逻辑元件）</td>
+</tr>
+<tr>
+<td align="center">发热量</td>
+<td align="center">大</td>
+<td align="center">小</td>
+</tr>
+<tr>
+<td align="center">存储成本</td>
+<td align="center">高</td>
+<td align="center">低</td>
+</tr>
+</tbody></table>
+<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><ol>
+<li>都以电信号的形式存储 0/1，断电就丢失信息，为易失性存储器</li>
+<li>SRAM 常用作 Cache，DRAM 常用作主存</li>
+</ol>
+<p>后期结合发展为 <u>SDRAM 同步动态随机存储器</u></p>
+<h5 id="DRAM-的刷新"><a href="#DRAM-的刷新" class="headerlink" title="DRAM 的刷新"></a>DRAM 的刷新</h5><ol>
+<li><p>刷新周期为 2ms</p>
+</li>
+<li><p>只传<strong>行地址</strong>，以行为单位，每次刷新一行存储单元 （DRAM 的行、列地址等长）</p>
+</li>
+<li><p>由硬件支持，读出一行的信息后重新写入，占用 1 个读/写周期</p>
+</li>
+<li><p><strong>什么时候刷新？</strong></p>
+<p> 假设 DRAM 内部结构排列成 128 ✖ 128 的形式，存储周期（读/写周期）为 0.5us，则一个刷新周期内有 2ms / 0.5us = 4000 个周期。<u>思路一，<strong>分散刷新</strong></u>：每次读写玩就刷新一行 –&gt; 系统的存储周期变为 1us，即前 0.5 us 用于正常读写，后 0.5 us 用于刷新某行。<u>思路二，<strong>集中刷新</strong></u>：2ms 内集中安排时间全部刷新 –&gt; 系统的存取周期还是 0.5us，留一段时间专门用于刷新，称为<em>访问“死区”</em>。<u>思路三，<strong>异步刷新</strong></u>：2ms 内每行刷新 1 次即可 –&gt; 2ms 内需要产生 128 次刷新请求，每隔 2ms / 128 =15.6us 一次，每 15.6us 内有 0.5 us 的死区</p>
+</li>
+</ol>
+<p><img src="doc/image-20210406204344029.png" alt="DRAM的刷新"></p>
+<p><img src="doc/image-20210406205040831.png" alt="image-20210406205040831">    </p>
+<h3 id="5-2-4-ROM-只读存储器"><a href="#5-2-4-ROM-只读存储器" class="headerlink" title="5.2.4 ROM 只读存储器"></a>5.2.4 ROM 只读存储器</h3><p>主要有</p>
+<ol>
+<li><p>MROM 掩模式只读存储器</p>
+</li>
+<li><p>PROM 可编程只读存储器</p>
+</li>
+<li><p>EPROM 光擦除可编程只读存储器 和 E<sup>2</sup>PROM 电擦除可编程只读存储器</p>
+</li>
+<li><p>Flash Memory 闪速存储器</p>
+</li>
+<li><p>固态硬盘</p>
+</li>
+</ol>
+<p>  <img src="doc/image-20210407104520704.png" alt="几种非易失性存储器的比较"></p>
+<h2 id="5-3-主存储器与-CPU-的连接"><a href="#5-3-主存储器与-CPU-的连接" class="headerlink" title="5.3 主存储器与 CPU 的连接"></a>5.3 主存储器与 CPU 的连接</h2><p>主存基本包括两个部分，即 ROM 和 RAM</p>
+<h3 id="5-3-1-存储器芯片介绍"><a href="#5-3-1-存储器芯片介绍" class="headerlink" title="5.3.1 存储器芯片介绍"></a>5.3.1 存储器芯片介绍</h3><p><img src="doc/image-20210407120303196.png" alt="典型存储器芯片封装"></p>
+<p>SRAM：工作电压 V<sub>CC</sub>；接地端 GND；片选线 $\overline{CS}$；读写控制信号$\overline{WE}$ </p>
+<p>DRAM：在 SRAM 拥有的引脚的基础上加上</p>
+<p>​              行地址选通信号 $\overline{RAS}$；列地址选通信号 $\overline{CAS}$</p>
+<p>ROM：程序电压 V<sub>PP</sub>；无读写控制信号$\overline{WE}$WE</p>
+<p>为了与主存连接，CPU 提供了<u>地址线</u>、<u>数据线</u>、<u>访存控制信号</u>$\overline{MREQ}$和<u>读/写控制信号</u> $R/\overline{W}$等</p>
+<h3 id="5-3-2-存储容量的扩展"><a href="#5-3-2-存储容量的扩展" class="headerlink" title="5.3.2 存储容量的扩展"></a>5.3.2 存储容量的扩展</h3><h4 id="位扩展"><a href="#位扩展" class="headerlink" title="位扩展"></a>位扩展</h4><p><img src="doc/image-20210407140412220.png" alt="位扩展"></p>
+<p>8 个 8K × 1 位的存储芯片连在一起可以做成 1 个 8K × 8 位的存储芯片</p>
+<p><img src="doc/image-20210407140150271.png" alt="位扩展"></p>
+<h4 id="字扩展"><a href="#字扩展" class="headerlink" title="字扩展"></a>字扩展</h4><p>线选法</p>
+<p><img src="doc/image-20210412202032408.png" alt="image-20210412202032408"></p>
+<p>译码片选法</p>
+<p><img src="doc/image-20210412203032013.png" alt="image-20210412203032013"></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><table>
+<thead>
+<tr>
+<th align="center">线选法</th>
+<th align="center">译码器片选法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">n 条线 $\rightarrow$ n 个选片信号</td>
+<td align="center">n 条线 $\rightarrow$ 2<sup>n</sup> 个选片信号</td>
+</tr>
+<tr>
+<td align="center">电路简单</td>
+<td align="center">电路复杂</td>
+</tr>
+<tr>
+<td align="center">地址空间不连续</td>
+<td align="center">地址空间可连续，可以增加逻辑设计</td>
+</tr>
+</tbody></table>
+<h4 id="字位同时扩展"><a href="#字位同时扩展" class="headerlink" title="字位同时扩展"></a>字位同时扩展</h4><p><img src="doc/QQ%E5%9B%BE%E7%89%8720210413140654.png"></p>
+<h3 id="5-3-3-例题"><a href="#5-3-3-例题" class="headerlink" title="5.3.3 例题"></a>5.3.3 例题</h3><p><img src="doc/image-20210413141054493.png" alt="image-20210413141054493"></p>
+<p>解：<img src="doc/QQ%E5%9B%BE%E7%89%8720210413143308.jpg" alt="QQ图片20210413143308"></p>
+<p><img src="doc/image-20210413211051332.png" alt="image-20210413211051332"></p>
+<h2 id="5-4-高速存储器"><a href="#5-4-高速存储器" class="headerlink" title="5.4 高速存储器"></a>5.4 高速存储器</h2><h3 id="5-4-1-双端口存储器"><a href="#5-4-1-双端口存储器" class="headerlink" title="5.4.1 双端口存储器"></a>5.4.1 双端口存储器</h3><p>双端口存储器是指，同一个存储器拥有<strong>两组</strong>相互独立的读/写控制线路，允许<strong>两个独立</strong>的 CPU 或控制器<strong>异步</strong>地访问存储单元</p>
+<p>双端口 RAM 是一种常用的双端口存储器，其最大的特点是存储数据可以共享</p>
+
       </section>
 
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/2.%20%20%E4%B8%80%E9%98%B6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E6%9A%82%E6%80%81%E5%88%86%E6%9E%90/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">模电笔记（一阶动态电路的暂态分析）</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -150,8 +356,8 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E8%BF%90%E7%AE%97%E5%99%A8/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第四章）</h2>
+        <a href="/2021/11/05/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Older</div>

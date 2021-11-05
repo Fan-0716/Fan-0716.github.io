@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 5.4.0">
+
+  
+
+  
+    <meta name="keywords" content="简单 分享 休闲 放松">
+  
+
+  
+    <meta name="author" content="Liyifan">
+  
+
+  
+
+  
+
+  <title>模电笔记（直流电路） | Li&#39;s blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://images3.alphacoders.com/118/1187753.png)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Li&#39;s blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">模电笔记（直流电路）</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Liyifan</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-11-05T04:31:58.000Z" itemprop="datePublished">2021-11-05</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E8%AF%BE%E7%A8%8B/">📒 课程</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="第一章-直流电路"><a href="#第一章-直流电路" class="headerlink" title="第一章 直流电路"></a>第一章 直流电路</h1><h2 id="1-1-电路及电路模型"><a href="#1-1-电路及电路模型" class="headerlink" title="1.1 电路及电路模型"></a>1.1 电路及电路模型</h2><p>略</p>
+<h2 id="1-2-电路变量"><a href="#1-2-电路变量" class="headerlink" title="1.2 电路变量"></a>1.2 电路变量</h2><h3 id="1-2-1-电流和电流的参考方向"><a href="#1-2-1-电流和电流的参考方向" class="headerlink" title="1.2.1 电流和电流的参考方向"></a>1.2.1 电流和电流的参考方向</h3><p><strong>参考方向都是假定的方向</strong></p>
+<ul>
+<li>电流强度 $i(t)$ 的数学表达式为 $i(t)=\frac{\mathrm{d} q}{\mathrm{~d} t}$</li>
+<li>直流电为 DC</li>
+<li>交流电为 AC</li>
+</ul>
+<h3 id="1-2-2-电压和电压的参考方向"><a href="#1-2-2-电压和电压的参考方向" class="headerlink" title="1.2.2 电压和电压的参考方向"></a>1.2.2 电压和电压的参考方向</h3><p>电压$u(t)$ 的数学表达式为 $u(t)=\frac{\mathrm{d} w}{\mathrm{~d} q}$</p>
+<p>直流电压为 $U$,时变电压为 $u$</p>
+<p>电压<strong>实际的方向</strong>：电位降的方向</p>
+<p><strong>参考方向（极性）</strong>：是为了方便分析和运算，任意<em>假定</em>的电压方向，简称方向</p>
+<p><strong>参考方向的三种表示方法</strong>：正负极性（参考方向是由正极性指向负极性）、箭头和双下标，如下图所示</p>
+<p><img src="doc/image-20210601210250642.png" alt="image-20210601210250642"></p>
+<h4 id="关联参考方向"><a href="#关联参考方向" class="headerlink" title="关联参考方向"></a>关联参考方向</h4><ul>
+<li>当电流的参考方向和电压的参考极性<strong>一致</strong>，则称为<strong>关联参考方向</strong></li>
+<li>相反，则称为<strong>非关联参考方向</strong></li>
+<li>谈关联参考方向，必须明确是对<strong>哪个元件</strong>而言</li>
+</ul>
+<h3 id="1-2-3-功率和能量"><a href="#1-2-3-功率和能量" class="headerlink" title="1.2.3 功率和能量"></a>1.2.3 功率和能量</h3><p>电功率是指单位时间内元件吸收或发出的电能，简称<strong>功率</strong>（p）</p>
+<p>对任意一个二端元件（或二端电路），当电压与电流<em>为关联参考方向</em>时有<br>$$<br>p=ui<br>$$</p>
+<p>如果是直流电压和电流，则用大写<br>$$<br>P=UI<br>$$<br>当电压与电流为非关联参考方向时有<br>$$<br>p=-ui<br>$$<br>计算出来的功率：<br>$$<br>\boldsymbol{p}\left{\begin{array}{ll}</p>
+<blockquote>
+<p>\mathbf{0} &amp; \text { 吸收功率 }(\text { 负载 }) \<br>&lt;\mathbf{0} &amp; \text { 提供功率 }(\text { 电源 })<br>\end{array}\right.<br>$$</p>
+</blockquote>
+<h2 id="1-3-电阻元件"><a href="#1-3-电阻元件" class="headerlink" title="1.3 电阻元件"></a>1.3 电阻元件</h2><p>欧姆定律：<br>$$<br>R=\frac{u}{i}\quad or\quad u=Ri<br>$$<br>伏安特性：可以用来区分线性电阻和非线性电阻</p>
+<p><strong>电导</strong>（G）：电阻的倒数<br>$$<br>G=\frac{1}{R}<br>$$<br><strong>开路</strong>：$R\rightarrow\infty$ 时，电阻元件呈现开路状态，电流恒等于零</p>
+<p><strong>短路</strong>：$R\rightarrow0$ 时，电阻元件呈现短路状态，电压恒等于零</p>
+<p>可调式电阻通常称为<strong>电位器</strong></p>
+<h2 id="1-4-电压源与电流源"><a href="#1-4-电压源与电流源" class="headerlink" title="1.4 电压源与电流源"></a>1.4 电压源与电流源</h2><p>电源在电路中<strong>不一定</strong>都是提供功率充当电源。</p>
+<h3 id="1-4-1-理想电压源"><a href="#1-4-1-理想电压源" class="headerlink" title="1.4.1 理想电压源"></a>1.4.1 理想电压源</h3><p>电压源输出的<strong>电压恒定</strong>，与外接的电路无关；电流任意，由外电路确定。</p>
+<p><img src="doc/image-20210330210428600.png" alt="image-20210330210428600"></p>
+<p>电压源的电压可以为零，相当于<strong>短路</strong></p>
+<h3 id="1-4-2-理想电流源"><a href="#1-4-2-理想电流源" class="headerlink" title="1.4.2 理想电流源"></a>1.4.2 理想电流源</h3><p>电流源输出的<strong>电流恒定</strong>，与外接的电路无关；电压任意，由外电路确定</p>
+<p><img src="doc/image-20210330210546708.png" alt="image-20210330210546708"></p>
+<p>电流源的电流可以为零，表示<strong>断路</strong></p>
+<h3 id="1-4-3-实际电源的两个电路模型"><a href="#1-4-3-实际电源的两个电路模型" class="headerlink" title="1.4.3 实际电源的两个电路模型"></a>1.4.3 实际电源的两个电路模型</h3><h4 id="1-实际电压源"><a href="#1-实际电压源" class="headerlink" title="1. 实际电压源"></a>1. 实际电压源</h4><p>电压源 $U_S$ 和内阻 $R_S$ <em>串联</em>组成</p>
+<p><img src="doc/image-20210330210709201.png" alt="image-20210330210709201"></p>
+<p>其电阻 R<sub>S</sub> 称为电源的<strong>内电阻</strong></p>
+<p>其<strong>伏安特性</strong>为 $U=U_{\mathrm{s}}-R_{\mathrm{S}} I$，$U_{OC}$ 称为开路电压，$I_{SC}$ 称为短路电流</p>
+<img src="doc/image-20210602141548630.png" alt="image-20210602141548630" style="zoom:50%;" />
+
+<p>实际电流源的<strong>外特性</strong>是工作电压 U 随着电流的增加而下降</p>
+<h4 id="2-实际电流源"><a href="#2-实际电流源" class="headerlink" title="2. 实际电流源"></a>2. 实际电流源</h4><p>电压源 $I_S$ 和内阻 $R_S$ <em>并联</em>组成</p>
+<ul>
+<li>其<strong>伏安特性</strong>为 $I=I_{\mathrm{S}}-\frac{U}{R_{\mathrm{S}}}$</li>
+</ul>
+<h2 id="1-5-基尔霍夫定律"><a href="#1-5-基尔霍夫定律" class="headerlink" title="==1.5 基尔霍夫定律=="></a>==1.5 基尔霍夫定律==</h2><ul>
+<li><strong>支路</strong>：每一个两端元件视为一个支路</li>
+<li><strong>节点</strong>：三条或者三条以上支路的连接点称为节点</li>
+<li><strong>回路</strong>：电路中任一闭合路径称为回路</li>
+<li><strong>网孔</strong>：在回路内部不另含支路的回路称为网孔</li>
+</ul>
+<h3 id="1-5-1-基尔霍夫电流定律（KCL）"><a href="#1-5-1-基尔霍夫电流定律（KCL）" class="headerlink" title="1.5.1 基尔霍夫电流定律（KCL）"></a>1.5.1 基尔霍夫电流定律（KCL）</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>在电路中，在任一时刻，对任一<strong>节点</strong>（包括广义节点），流入/流出该节点的所有电流的<strong>代数和等于零</strong>，即 </p>
+<p>$$<br>\sum I=0<br>$$</p>
+<p>也可以表示为，任一时刻，流入任一节点的电流之和等于流出该节点的电流之和<br>$$<br>\sum I_{in}=\sum I_{out}<br>$$</p>
+<p><img src="doc/image-20210330212045438.png" alt="image-20210330212045438"></p>
+<h3 id="1-5-2-基尔霍夫电压定律（KVL）"><a href="#1-5-2-基尔霍夫电压定律（KVL）" class="headerlink" title="1.5.2 基尔霍夫电压定律（KVL）"></a>1.5.2 基尔霍夫电压定律（KVL）</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>在电路中，在任一时刻，对任一<strong>回路</strong>（包括广义回路），该回路各元件两端的电压的代数和为零，即<br>$$<br>\sum U=0<br>$$</p>
+<p>p.s. 元件两端的电压方向与回路绕行方向相同时取正号，相反则取负号</p>
+<p>绕行的回路也可以不经过支路，即广义回路：</p>
+<p><img src="doc/image-20210330212306676.png" alt="image-20210330212306676"></p>
+<h2 id="1-6-单口网络及等效"><a href="#1-6-单口网络及等效" class="headerlink" title="1.6 单口网络及等效"></a>1.6 单口网络及等效</h2><p>单口网络又称<strong>二端网络</strong>，是指只有一个端口（一对端钮）与外部电路连接的电路</p>
+<p>单口网络的 VAR 由其自身决定，与外接电路无关</p>
+<p>等效是指对外电路等效，内部结构不一定一样</p>
+<p><img src="doc/image-20210330212524613.png" alt="image-20210330212524613"></p>
+<h3 id="1-6-1-电阻的串并联及等效"><a href="#1-6-1-电阻的串并联及等效" class="headerlink" title="1.6.1 电阻的串并联及等效"></a>1.6.1 电阻的串并联及等效</h3><p>串联电路的等效电阻为 $R=R_{1}+R_{2}+\cdots+R_{n}=\sum_{i=1}^{n} R_{i}$；第 k 个电阻的电压为 $U_{k}=\frac{R_{k}}{\sum_{i=1}^{n} R_{i}} U$</p>
+<p>并联电路的等效电阻为 $\frac{1}{R}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\cdots+\frac{1}{R_{n}}$ ，即等效电导为 $G=G_1+G_2+\cdots+G_n$</p>
+<h3 id="1-6-2-理想电源的等效变换"><a href="#1-6-2-理想电源的等效变换" class="headerlink" title="1.6.2 理想电源的等效变换"></a>1.6.2 理想电源的等效变换</h3><ol>
+<li><p>电压源的<strong>串联</strong>及等效</p>
+<img src="doc/image-20210602190735828.png" alt="image-20210602190735828" style="zoom: 50%;" /> </li>
+<li><p>电流源的<strong>并联</strong>及等效</p>
+<img src="doc/image-20210602190835138.png" alt="image-20210602190835138" style="zoom:50%;" /></li>
+<li><p>电压源与元件的并联（并联的元件可以去掉）</p>
+<img src="doc/image-20210602191038417.png" alt="image-20210602191038417" style="zoom:50%;" /></li>
+<li><p>电流源与元件的串联（串联的元件可以去掉）</p>
+<img src="doc/image-20210602191117845.png" alt="image-20210602191117845" style="zoom:50%;" /></li>
+<li><p><strong>举例</strong>：</p>
+<img src="doc/image-20210602191209091.png" alt="image-20210602191209091" style="zoom:50%;" /></li>
+</ol>
+<h3 id="1-6-3-实际电源两种模型的等效变换"><a href="#1-6-3-实际电源两种模型的等效变换" class="headerlink" title="1.6.3 ==实际电源两种模型的等效变换=="></a>1.6.3 ==实际电源两种模型的等效变换==</h3><p><img src="doc/image-20210602191605793.png" alt="image-20210602191605793"></p>
+<p><strong>等效变化条件</strong>：<img src="doc/image-20210602191632925.png" alt="image-20210602191632925" style="zoom:50%;" /></p>
+<h2 id="1-7-电位的概念"><a href="#1-7-电位的概念" class="headerlink" title="1.7 电位的概念"></a>1.7 电位的概念</h2><p>电路中某点<strong>电位</strong>指的是该点与<u>参考点之间</u>的<strong>电压</strong> </p>
+<p>电路中有且只有一个参考点，通常选择接地的点作为<strong>参考点</strong></p>
+<p>利用电位可以将电路简化</p>
+<h2 id="1-8-支路电流分析法（重点看ppt例题）"><a href="#1-8-支路电流分析法（重点看ppt例题）" class="headerlink" title="1.8 ==支路电流分析法（重点看ppt例题）=="></a>1.8 ==支路电流分析法（重点看ppt例题）==</h2><p>以<u>支路电流为<strong>求解变量</strong></u>的分析方法为支路电流分.0.析法</p>
+<p>单独的一条电流源或者电压源<strong>不算</strong>支路</p>
+<p>假设电路具有 n 个节点，b 条支路，则应根据基尔霍夫定律列出 b 个独立方程，其过程如下</p>
+<ol>
+<li>标出每个支路电流以及参考方向</li>
+<li>根据 KCL 列出 <strong>n - 1</strong> 个独立的<strong>节点电流方程</strong></li>
+<li>选定所有<strong>独立回路</strong>并指定回路的绕行方向，再根据 KVL 列出 <strong>b - (n - 1)</strong> 个<strong>回路电压方程</strong></li>
+<li>求解</li>
+</ol>
+<h2 id="1-9-节点分析法（重点看ppt例题）"><a href="#1-9-节点分析法（重点看ppt例题）" class="headerlink" title="1.9 ==节点分析法（重点看ppt例题）=="></a>1.9 ==节点分析法（重点看ppt例题）==</h2><p>在电路中任选一个节点作为参考节点（设此节点电位为零），则其他节点到参考节点的电压称为该节点的节点电压</p>
+<p>以<u>节点电压为<strong>未知量</strong></u>，将各支路电流用节点电压表示</p>
+<p>利用 KCL 列出独立的电流方程求解</p>
+<ol>
+<li>用节点电位表示出各个支路电流，得到 b 个支路电流方程</li>
+<li>对独立节点（节点数减一）列出 <strong>n - 1</strong> 个 KCL 方程</li>
+<li>求解</li>
+</ol>
+<h2 id="1-10-叠加定理"><a href="#1-10-叠加定理" class="headerlink" title="1.10 叠加定理"></a>1.10 叠加定理</h2><p>在线性电路中，由多个独立电源共同作用在某一支路产生的电压（或电流）等于电路中每个<strong>独立电源单独作用</strong>在该支路产生的电压（或电流）的<strong>代数和</strong></p>
+<p>叠加原理只适用于线性电路</p>
+<p>线性电路的电流/电压均可用叠加定理进行运算，但是功率不行</p>
+<p>不作用电源的处理：</p>
+<ul>
+<li>电压源不作用，相当于短路</li>
+<li>电流源不作用，相当于断路</li>
+</ul>
+<h2 id="1-11-等效电源定理"><a href="#1-11-等效电源定理" class="headerlink" title="1.11 等效电源定理"></a>1.11 等效电源定理</h2><p>把待求支路从网络中拉出来，把它看作外部电路，其余部分则是线性有源单口网络</p>
+<p>等效电源模型为电压源模型——戴维南定理</p>
+<p>等效电源模型为电流源模型——诺顿定理</p>
+<h3 id="1-11-1-戴维南定理"><a href="#1-11-1-戴维南定理" class="headerlink" title="1.11.1 戴维南定理"></a>1.11.1 戴维南定理</h3><p>任意一个线性有源单口网络，就其对外部电路的作用而言，总可以用一个<strong>理想电压源和一个电阻串联</strong>的支路来等效，如图：</p>
+<p>运用：</p>
+<ol>
+<li>用叠加定理逐步计算<u>开路</u>电压</li>
+</ol>
+<p><img src="doc/image-20210331145823364.png" alt="image-20210331145823364"></p>
+<p>则伏安关系为：$U=U_{\mathrm{OC}}-R_{\mathrm{O}} I$</p>
+<h3 id="1-11-2-诺顿定理"><a href="#1-11-2-诺顿定理" class="headerlink" title="1.11.2 诺顿定理"></a>1.11.2 诺顿定理</h3><p>任何一个有源二端线性网络都可以用一个<strong>电流源和电阻的并联</strong>来等效代替。</p>
+<p>运用：</p>
+<ol>
+<li>计算短路电流（可以用节点法）</li>
+</ol>
+<h2 id="1-12-含受控源的电阻电路"><a href="#1-12-含受控源的电阻电路" class="headerlink" title="1.12 含受控源的电阻电路"></a>1.12 含受控源的电阻电路</h2><h3 id="1-12-1-受控电源"><a href="#1-12-1-受控电源" class="headerlink" title="1.12.1 受控电源"></a>1.12.1 受控电源</h3><p>电压源的电压和电流源的电流受到同一电路中其他支路的电压或电流控制的电源称为<strong>受控源</strong></p>
+<p>受控源用<strong>菱形符号</strong>表示</p>
+<p>借助于受控源能得到幽怨电子元器件（如晶体三极管、运算放大器等）的电路模型</p>
+<p>根据受控源支路是开路还是短路，以及控制电路是电压源还是电流源，可以将受控源分成 4 种类型：</p>
+<p><img src="doc/image-20210603205538839.png" alt="image-20210603205538839"></p>
+<h3 id="1-12-2-含受控源电阻电路的分析"><a href="#1-12-2-含受控源电阻电路的分析" class="headerlink" title="1.12.2 含受控源电阻电路的分析"></a>1.12.2 含受控源电阻电路的分析</h3><p>在对受控源电路进行等效时，应在电路种<strong>保留控制量支路</strong></p>
+<p>对受控源使用叠加定理时必须保留受控源</p>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E8%BF%90%E7%AE%97%E5%99%A8/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第四章）</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%BC%96%E7%A0%81%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第三章）</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "8km8v7kHxDNNTptcPd1RAqrG-gzGzoHsz",
+        appKey: "Yx3VrY2Fm85lkjDoVhhA4ncE",
+        avatar: "robohash",
+        placeholder: "随便说点什么叭～",
+        notify: true,
+        visitor: true,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://images.alphacoders.com/118/1184971.jpg" class="soft-size--round soft-style--box" alt="Liyifan">
+    
+    
+      <h2>Liyifan</h2>
+    
+    
+      <p>天道酬勤</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>8</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        2
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        4
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>暂无</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/test/">
+            test (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B/">
+            课程 (6)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/first/" style="font-size: 10px;" class="tags-cloud-0">first</a> <a href="/tags/test/" style="font-size: 10px;" class="tags-cloud-0">test</a> <a href="/tags/%E6%A8%A1%E7%94%B5/" style="font-size: 20px;" class="tags-cloud-10">模电</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 20px;" class="tags-cloud-10">计算机组成原理</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2021 <a href="/" target="_blank">Liyifan</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

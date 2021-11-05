@@ -24,7 +24,7 @@
 
   
 
-  <title>活动区 | Li&#39;s blog</title>
+  <title>计算机组成原理笔记（第四章） | Li&#39;s blog</title>
 
   
 
@@ -45,7 +45,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://images3.alphacoders.com/118/1187753.png)"></div>
   
@@ -95,50 +95,197 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">活动区</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">计算机组成原理笔记（第四章）</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Liyifan</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-11-05T04:31:58.000Z" itemprop="datePublished">2021-11-05</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E8%AF%BE%E7%A8%8B/">📒 课程</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">🏷️ 计算机组成原理</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="第四章-运算方法与运算器"><a href="#第四章-运算方法与运算器" class="headerlink" title="第四章 运算方法与运算器"></a>第四章 运算方法与运算器</h1><h2 id="4-1-定点数的加减运算及实现"><a href="#4-1-定点数的加减运算及实现" class="headerlink" title="4.1 定点数的加减运算及实现"></a>4.1 定点数的加减运算及实现</h2><h3 id="4-1-1-原码的加减法"><a href="#4-1-1-原码的加减法" class="headerlink" title="4.1.1 原码的加减法"></a>4.1.1 原码的加减法</h3><h4 id="原码的加法运算"><a href="#原码的加法运算" class="headerlink" title="原码的加法运算"></a>原码的加法运算</h4><p>符号位不参与运算；只有数值位参与运算</p>
+<ol>
+<li>正 + 正：绝对值做加法，结果为正</li>
+<li>负 + 负：绝对值做加法，结果为负</li>
+<li>正 + 负：绝对值大的减绝对值小的，符号同绝对值大的数</li>
+</ol>
+<h4 id="原码的减法运算"><a href="#原码的减法运算" class="headerlink" title="原码的减法运算"></a>原码的减法运算</h4><p>减数符号取反，转变为加法</p>
+<h3 id="4-1-2-补码的加减法"><a href="#4-1-2-补码的加减法" class="headerlink" title="4.1.2 补码的加减法"></a>4.1.2 补码的加减法</h3><p>符号位也参与运算</p>
+<h3 id="4-1-3-溢出判断"><a href="#4-1-3-溢出判断" class="headerlink" title="4.1.3 溢出判断"></a>4.1.3 溢出判断</h3><ol>
+<li><u>正 + 正</u> 可能会上溢，产生负数</li>
+<li><u>负 + 负</u> 可能会下溢，产生正数</li>
+<li>正 + 负 不可能会产生溢出</li>
+</ol>
+<h4 id="溢出判断的机器表达式"><a href="#溢出判断的机器表达式" class="headerlink" title="溢出判断的机器表达式"></a>溢出判断的机器表达式</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>根据离散、数电的知识推出</p>
+<img src="doc/image-20210314104948516.png" alt="image-20210314104948516" style="zoom:67%;" />    
+
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p><img src="doc/image-20210314111527719.png" alt="image-20210314111527719"></p>
+<p>符号位的进位和最高数值位的进位如下：</p>
+<img src="doc/image-20210314112716825.png" alt="image-20210314112716825" style="zoom:50%;" />    
+
+<h5 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h5><p>采用双符号位</p>
+<img src="../../../Users/Bencyq/AppData/Roaming/Typora/typora-user-images/image-20210314113056452.png" alt="image-20210314113056452" style="zoom:67%;" />    
+
+<h3 id="4-1-4-机器数的移位运算"><a href="#4-1-4-机器数的移位运算" class="headerlink" title="4.1.4 机器数的移位运算"></a>4.1.4 机器数的移位运算</h3><h4 id="逻辑移位"><a href="#逻辑移位" class="headerlink" title="逻辑移位"></a>逻辑移位</h4><p>直接补 0</p>
+<h4 id="算数移位"><a href="#算数移位" class="headerlink" title="算数移位"></a>算数移位</h4><p>通过改变各个数码位和小数点的相对位置，从而改变各数码位的位权</p>
+<h5 id="原码的算术移位"><a href="#原码的算术移位" class="headerlink" title="原码的算术移位"></a>原码的算术移位</h5><ul>
+<li>右移：高位补 0，低位舍弃；若舍弃的位 != 0，则会丢失精度</li>
+<li>左移：低位补 0，高位舍弃；若舍弃的位 != 0，则会出现严重误差</li>
+</ul>
+<h5 id="反码的算数移位"><a href="#反码的算数移位" class="headerlink" title="反码的算数移位"></a>反码的算数移位</h5><ul>
+<li>正数反码的移位运算与原码相同</li>
+<li>负数的反码运算补位补的都是 <strong>1</strong> </li>
+</ul>
+<h5 id="补码的算数移位"><a href="#补码的算数移位" class="headerlink" title="补码的算数移位"></a>补码的算数移位</h5><ul>
+<li>正数补码的移位运算与原码相同</li>
+<li>负数补码中，最右边的 1 及其右边同原码，最左边的 1 的左边同反码，所以是：<strong>高位补 1，低位补 0</strong></li>
+</ul>
+<h2 id="4-2-定点数的乘法运算及实现"><a href="#4-2-定点数的乘法运算及实现" class="headerlink" title="4.2 定点数的乘法运算及实现"></a>4.2 定点数的乘法运算及实现</h2><h3 id="4-2-1-原码乘法及实现"><a href="#4-2-1-原码乘法及实现" class="headerlink" title="4.2.1 原码乘法及实现"></a>4.2.1 原码乘法及实现</h3><h4 id="手算乘法"><a href="#手算乘法" class="headerlink" title="手算乘法"></a>手算乘法</h4><p>与十进制的乘法算法相同</p>
+<img src="doc/image-20210314143922428.png" alt="image-20210314143922428" style="zoom: 67%;" />    
+
+<h4 id="原码一位运算"><a href="#原码一位运算" class="headerlink" title="原码一位运算"></a>原码一位运算</h4><ul>
+<li>符号位单独处理，符号位 = X<sub>S</sub> $\oplus$ Y<sub>S</sub> </li>
+<li>数值位取绝对值进行乘法运算</li>
+</ul>
+<h5 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h5><ul>
+<li>先加法，再移位，重复 n 次</li>
+</ul>
+<h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><img src="doc/%E6%97%A0%E6%A0%87%E9%A2%98.png" alt="无标题" style="zoom:80%;" />    
+
+<h3 id="4-2-2-补码的乘法运算"><a href="#4-2-2-补码的乘法运算" class="headerlink" title="4.2.2 补码的乘法运算"></a>4.2.2 补码的乘法运算</h3><h4 id="补码一位乘法"><a href="#补码一位乘法" class="headerlink" title="补码一位乘法"></a>补码一位乘法</h4><h5 id="校正法"><a href="#校正法" class="headerlink" title="校正法"></a>校正法</h5><p>补码一位运算与原码一位运算的区别如下</p>
+<p><img src="doc/image-20210314151656308.png" alt="image-20210314151656308">    </p>
+<h5 id="实现方法-1"><a href="#实现方法-1" class="headerlink" title="实现方法"></a>实现方法</h5><p><img src="doc/%E8%A1%A5%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95.png" alt="补码一位乘法"></p>
+<h5 id="booth-算法"><a href="#booth-算法" class="headerlink" title="booth 算法"></a>booth 算法</h5><h6 id="运算规则"><a href="#运算规则" class="headerlink" title="运算规则"></a>运算规则</h6><ol>
+<li><p>被乘数 X 和乘数 Y 均以补码的形式参加运算</p>
+</li>
+<li><p>部分积和被乘数 X 采用双符号位，乘数 X 采用单符号位</p>
+</li>
+<li><p>初始的部分积为 0；运算前，再乘数 Y 的补码末位后添加一位附加位 Y<sub>n + 1</sub>，初始值为 0</p>
+</li>
+<li><p>根据 Y<sub>n</sub> Y<sub>n + 1</sub> 的值，按照表格进行右移操作，遵循补码的移位规则</p>
+</li>
+<li><p>累加 n + 1 次，右移 n 次</p>
+</li>
+</ol>
+<p><img src="doc/image-20210317111104559.png" alt="image-20210317111104559"></p>
+<h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><p>   <img src="doc/image-20210317111614113.png" alt="image-20210317111614113"></p>
+<h2 id="4-3-定点数除法运算及实现"><a href="#4-3-定点数除法运算及实现" class="headerlink" title="4.3 定点数除法运算及实现"></a>4.3 定点数除法运算及实现</h2><h3 id="4-3-1-原码除法及实现"><a href="#4-3-1-原码除法及实现" class="headerlink" title="4.3.1 原码除法及实现"></a>4.3.1 原码除法及实现</h3><h4 id="手工除法算法"><a href="#手工除法算法" class="headerlink" title="手工除法算法"></a>手工除法算法</h4><ul>
+<li>忽略小数点，每确定一位商，进行一次减法，得到四位余数</li>
+<li>在余数末尾补 0，再确定下一位商</li>
+<li>确定 5 位商即可停止（机器字长为 5 位）</li>
+</ul>
+<p><img src="doc/image-20210317174325333.png" alt="image-20210317174325333" style="zoom:67%;" />   –&gt;   <img src="doc/image-20210317174648735.png" alt="image-20210317174648735"></p>
+<p>x/y 结果为 0.1101，余数为 0.00000111</p>
+<h2 id="4-5-浮点运算及运算器"><a href="#4-5-浮点运算及运算器" class="headerlink" title="4.5 浮点运算及运算器"></a>4.5 浮点运算及运算器</h2><h3 id="4-5-1-浮点加减运算"><a href="#4-5-1-浮点加减运算" class="headerlink" title="4.5.1 浮点加减运算"></a>4.5.1 浮点加减运算</h3><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol>
+<li>对阶</li>
+<li>尾数加减</li>
+<li>规格化</li>
+<li>舍入</li>
+<li>判溢出</li>
+</ol>
+<h4 id="实例一：无舍入"><a href="#实例一：无舍入" class="headerlink" title="实例一：无舍入"></a>实例一：无舍入</h4><p><img src="doc/image-20210317193305611.png" alt="image-20210317193305611">    </p>
+<h4 id="实例二：舍入"><a href="#实例二：舍入" class="headerlink" title="实例二：舍入"></a>实例二：舍入</h4><p><img src="doc/image-20210317193437116.png" alt="image-20210317193437116">    </p>
+
       </section>
 
       
       
-        <section class="page-link-container">
+        <nav class="article-nav">
           
-            <div class="link-item layout-padding">
-              <a href="https://www.bilibili.com/" title="B站" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-                
-                <div>
-                  <h4 class="text-ellipsis">B站</h4>
-                  
-                </div>
-              </a>
-            </div>
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/firstBlog/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">firstBlog</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
-        </section>
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/1.%20%20%E7%9B%B4%E6%B5%81%E7%94%B5%E8%B7%AF/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">模电笔记（直流电路）</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
       
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "8km8v7kHxDNNTptcPd1RAqrG-gzGzoHsz",
+        appKey: "Yx3VrY2Fm85lkjDoVhhA4ncE",
+        avatar: "robohash",
+        placeholder: "随便说点什么叭～",
+        notify: true,
+        visitor: true,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -175,6 +322,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -232,7 +381,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">

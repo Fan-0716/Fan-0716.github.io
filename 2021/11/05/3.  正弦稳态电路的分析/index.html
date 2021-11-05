@@ -24,7 +24,7 @@
 
   
 
-  <title>firstBlog | Li&#39;s blog</title>
+  <title>模电笔记（正弦稳态电路的分析） | Li&#39;s blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">firstBlog</h1>
+          <h1 class="title-wrap">模电笔记（正弦稳态电路的分析）</h1>
           <h2 class="title-sub-wrap">
             <strong>Liyifan</strong>
             <span>发布于</span>
@@ -106,14 +106,12 @@
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/test/">📒 test</a></li>
+    <li><a href="/categories/%E8%AF%BE%E7%A8%8B/">📒 课程</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/test/">🏷️ test</a></li>
-  
-    <li><a href="/tags/first/">🏷️ first</a></li>
+    <li><a href="/tags/%E6%A8%A1%E7%94%B5/">🏷️ 模电</a></li>
   
 </ul>
         </div>
@@ -137,12 +135,140 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="正弦稳态电路的分析"><a href="#正弦稳态电路的分析" class="headerlink" title="正弦稳态电路的分析"></a>正弦稳态电路的分析</h1><h2 id="3-1-正弦交流电的基本概念"><a href="#3-1-正弦交流电的基本概念" class="headerlink" title="3.1 正弦交流电的基本概念"></a>3.1 正弦交流电的基本概念</h2><p>正弦交流电瞬时值的一般表达式为：<br>$$<br>u=U_msin(\omega t+\theta_u)\<br>i=I_msin(\omega t+\theta_i)<br>$$<br>可见，每个正弦量包含三个基本要素：</p>
+<ol>
+<li>最大值 / 幅值（$U_m$、$I_m$）</li>
+<li>角频率 $\omega$</li>
+<li>初相位（$\theta_u$、$\theta_i$）</li>
+</ol>
+<p>交流电的<strong>有效值</strong>：</p>
+<p>与交流电热效应想等的直流电定义为该交流电的有效值，用大写字母 I、U 表示<br>$$<br>RI^2=\frac1T\int^T_0Ri^2dt\Rightarrow I=\sqrt{\frac1T\int^T_0i^2dt}<br>$$<br>将 正弦函数 i （交流电）带入公式可得：<br>$$<br>I_m=\sqrt2 I\<br>U_m=\sqrt2I<br>$$<br>相位差 $\phi=\theta_u-\theta_i=0^0$ 时，电压与电流相同；$\phi=\theta_u-\theta_i=180^0$ 时，电压与电流相反</p>
+<h2 id="3-2-正弦量的相量表示"><a href="#3-2-正弦量的相量表示" class="headerlink" title="3.2 正弦量的相量表示"></a>3.2 正弦量的相量表示</h2><p><strong>旋转矢量法</strong>：</p>
+<p>在平面坐标上的一个旋转矢量可以表示出正弦量的三个要素</p>
+<p>设正弦量为 $u=U_msin(\omega t+\theta)$</p>
+<ul>
+<li>该旋转的矢量在 y 轴上投影的长度即为正弦量的值</li>
+<li>矢量与 x 轴的夹角为初相位</li>
+</ul>
+<p><img src="doc/image-20210616152555582.png" alt="image-20210616152555582"></p>
+<p>采用复数坐标 $A=a+jb$ ，a 为实部，b 为虚部</p>
+<p>复数的模 $|A|=\sqrt{a^2+b^2}$</p>
+<p>复数的幅角 $\theta =arctan\frac ba$</p>
+<p>实部 $a=|A|cos\theta$</p>
+<p>虚部 $b=|A|sin\theta$</p>
+<p><strong>瞬时值</strong>：<br>$$<br>u(t)=U_msin(\omega t+\theta)=\sqrt2Usin(\omega t+\theta)<br>$$<br>可以表示为：有效值向量 $\dot{U}=U \angle \theta$ 或者 $\dot{U}=Ue^{j\theta}$</p>
+<p>相量是一个与时间无关的复值常数，所以它可以表示正弦量，但不等于正弦量</p>
+<h2 id="3-3-基尔霍夫定律的相量表示"><a href="#3-3-基尔霍夫定律的相量表示" class="headerlink" title="3.3 基尔霍夫定律的相量表示"></a>3.3 基尔霍夫定律的相量表示</h2><p>$$<br>\sum\dot I=0\<br>\sum\dot U=0<br>$$</p>
+<h2 id="3-4-三种基本元件伏安关系的相量表示"><a href="#3-4-三种基本元件伏安关系的相量表示" class="headerlink" title="3.4 三种基本元件伏安关系的相量表示"></a>3.4 三种基本元件伏安关系的相量表示</h2><h3 id="3-4-1-电阻元件"><a href="#3-4-1-电阻元件" class="headerlink" title="3.4.1 电阻元件"></a>3.4.1 电阻元件</h3><p>电压与电流的关系可以表示为 $\dot U=R\dot I$</p>
+<p>设 $i=\sqrt2Isin\omega t$</p>
+<p>则 $u=\sqrt2RIsin\omega t$</p>
+<ol>
+<li>频率相同</li>
+<li>有效值 $U=RI$</li>
+<li>相位关系为 $\theta_u=\theta_i$</li>
+</ol>
+<h3 id="3-4-2-电感元件"><a href="#3-4-2-电感元件" class="headerlink" title="3.4.2 电感元件"></a>3.4.2 电感元件</h3><p>电压与电流的关系<br>$$<br>u=L\frac{di}{dt}<br>$$</p>
+<p>设 $i=\sqrt2Isin\omega t$</p>
+<p>则 $u=\sqrt2Usin(\omega t+90^o)$</p>
+<ol>
+<li><p>频率相同</p>
+</li>
+<li><p>有效值 $U=\omega LI$</p>
+<p>定义 $X_L=\omega L=2\pi fL$</p>
+<p>则 $U=X_L I$</p>
+</li>
+<li><p>电压超前电流 $90^0$</p>
+</li>
+</ol>
+<p>$X_L$ 称为电感电抗，简称<strong>感抗</strong>，单位为欧姆</p>
+<p>定义<br>$$<br>X_L=\omega L=2\pi fL<br>$$</p>
+<p>则 $U=X_L I$</p>
+<p>$$<br>\dot U=j\omega L\dot I=jX_L\dot I<br>$$</p>
+<p>这是电感电路中欧姆定律的相量形式，既表示了电压与电流有效值之间的关系，也反映了两者之间的相位差 </p>
+<h3 id="3-4-3-电容元件"><a href="#3-4-3-电容元件" class="headerlink" title="3.4.3 电容元件"></a>3.4.3 电容元件</h3><p>电流与电压的关系<br>$$<br>i=\frac{dq}{dt}=C\frac{du}{dt}<br>$$<br>若<br>$$<br>U=\sqrt2Usin\omega t<br>$$<br>则<br>$$<br>i=\sqrt2U\omega Csin(\omega t+90^o)<br>$$</p>
+<ol>
+<li>频率相同</li>
+<li>有效值 $I=\omega CU$</li>
+<li>电流超前电压 $90^o$</li>
+</ol>
+<p>因为 $U=\frac1{\omega C}I$</p>
+<p>定义 $X_C=\frac1{\omega C}=\frac1{2\pi fC}$</p>
+<p>则 $U=X_CI$</p>
+<p>$X_C$ 称为电容电抗，简称为容抗，单位为欧姆</p>
+<p>用相量的形式写出电容电压与电流的之间的关系为<br>$$<br>\dot U=-jX_C\dot I=-j\frac1{\omega C}\dot I=\frac{1}{j\omega C}\dot I<br>$$</p>
+<h3 id="3-4-4-小结"><a href="#3-4-4-小结" class="headerlink" title="3.4.4 小结"></a>3.4.4 小结</h3><p><img src="doc/image-20210618135535883.png" alt="image-20210618135535883"></p>
+<h2 id="3-5-简单正弦交流电路"><a href="#3-5-简单正弦交流电路" class="headerlink" title="3.5 简单正弦交流电路"></a>3.5 简单正弦交流电路</h2><h3 id="3-5-1-RLC-串流交流电路"><a href="#3-5-1-RLC-串流交流电路" class="headerlink" title="3.5.1 RLC 串流交流电路"></a>3.5.1 RLC 串流交流电路</h3><p><img src="doc/image-20210618172014355.png" alt="image-20210618172014355"></p>
+<p>设电流<br>$$<br>i=\sqrt2I sin\omega t<br>$$</p>
+<p>则<br>$$<br>u_R=\sqrt2 RIsin(\omega t)\<br>u_L=\sqrt2 \omega LIsin(\omega t+90^o)\<br>u_C=\sqrt2 \frac1{\omega C}I sin(\omega t-90^o)<br>$$<br>对应的相量形式为<br>$$<br>\dot I=I\ang0^o\quad\dot U_R=R\dot I\<br>\dot U_L=jX_L\dot I\quad \dot U_C=-jX_C\dot I<br>$$<br>由 KVL 可得<br>$$<br>\begin{aligned}<br>&amp;\dot{U}=\dot{U}<em>{\mathrm{R}}+\dot{U}</em>{\mathrm{L}}+\dot{U}<em>{\mathrm{C}}=R \dot{I}+\mathrm{j} X</em>{\mathrm{L}} \dot{I}-\mathrm{j} X_{\mathrm{C}} \dot{I} \<br>&amp;=\left[R+\mathrm{j}\left(X_{\mathrm{L}}-X_{\mathrm{C}}\right)\right] \dot{I}=(R+\mathrm{j} X) \dot{I} \<br>&amp;=Z \dot{I}<br>\end{aligned}<br>$$<br>其中<br>$$<br>X=X_L-X_C<br>$$<br>是感抗与容抗之差，称为<strong>电抗</strong>，单位为欧姆</p>
+<p>而<br>$$<br>Z=R+j(X_L-X_C)=R+JX<br>$$<br>称为<strong>复阻抗</strong>，简称<strong>阻抗</strong>，实部为电阻，虚部为电抗</p>
+<p>复阻抗的模<br>$$<br>|Z|=\sqrt{R^2+X^2}=\sqrt{R^2+(\omega L-\frac1{\omega C})^2}<br>$$<br>复阻抗的辐角称为阻抗角<br>$$<br>\phi=arctan\frac XR<br>$$<br>R，X，|Z| 三者之间构成的直角三角形，称为阻抗三角形，如图</p>
+<img src="doc/image-20210619100655128.png" alt="image-20210619100655128" style="zoom:50%;" />
+$$
+Z=\frac{\dot U}{\dot I}=\frac UI\ang\theta_u-\theta_i
+$$
+感性电路：
+
+<ul>
+<li>当 $X_L &gt;X_C$ 时，$X&gt;0，\phi&gt;0$，电压超前电流，电路呈电感性</li>
+</ul>
+<p>容性电路：</p>
+<ul>
+<li>当 $X_L &lt;X_C$ 时，$X&lt;0，\phi&lt;0$，电压滞后电流，电路呈电容性</li>
+</ul>
+<p>电阻性电路：</p>
+<ul>
+<li>当 $X_L =X_C$ 时，$X=0，\phi=0$，电压与电流同相，电路呈电阻性</li>
+</ul>
+<h3 id="3-5-2-阻抗的串并联"><a href="#3-5-2-阻抗的串并联" class="headerlink" title="3.5.2 阻抗的串并联"></a>3.5.2 阻抗的串并联</h3><h4 id="阻抗的串联"><a href="#阻抗的串联" class="headerlink" title="阻抗的串联"></a>阻抗的串联</h4><p>$$<br> \dot U=(Z_1+Z_2\dot I)<br>$$</p>
+<p>分压公式为<br>$$<br>\dot U_1=\frac{Z_1}{Z_1+Z_2}\dot U\quad\quad\dot U_2=\frac{Z_2}{Z_1+Z_2}\dot U<br>$$<br>显然，多个阻抗串联的等效阻抗为<br>$$<br>Z=Z_1+Z_2+Z_3+\cdots<br>$$<br>对应的分压公式<br>$$<br>\dot U_k=\frac{Z_K}{Z}\dot U<br>$$<br><strong>注意</strong>：分电压可以大于总电压（由于虚部的存在）</p>
+<h4 id="阻抗的并联"><a href="#阻抗的并联" class="headerlink" title="阻抗的并联"></a>阻抗的并联</h4><p>$$<br>\dot U=\frac{Z_1Z_2}{Z_!+Z_2}\dot I<br>$$</p>
+<p>分流公式为<br>$$<br>\dot I_1=\frac{Z_2}{Z_1+Z_2}\dot I\quad\quad\dot I_2=\frac{Z_1}{Z_1+Z_2}\dot I<br>$$</p>
+<h4 id="复导纳"><a href="#复导纳" class="headerlink" title="复导纳"></a>复导纳</h4><p>复阻抗的倒数称为<strong>复导纳</strong>，简称<strong>导纳</strong>（Y 的实数部分叫做电导，虚数部分叫做电纳）<br>$$<br>Y=\frac1Z=\frac1{|Z|\angle\phi}=\frac1{|Z|}\angle{-\phi}<br>$$</p>
+<h2 id="3-6-正弦稳态电路的分析"><a href="#3-6-正弦稳态电路的分析" class="headerlink" title="3.6 正弦稳态电路的分析"></a>3.6 正弦稳态电路的分析</h2><p>利用第一章的知识来求解正弦稳态电路</p>
+<h2 id="3-7-正弦稳态电路的功率"><a href="#3-7-正弦稳态电路的功率" class="headerlink" title="3.7 正弦稳态电路的功率"></a>3.7 正弦稳态电路的功率</h2><h3 id="3-7-1-瞬时功率"><a href="#3-7-1-瞬时功率" class="headerlink" title="3.7.1 瞬时功率"></a>3.7.1 瞬时功率</h3><p>设<br>$$<br>i=I_msin(\omega t+\theta_i)\<br>u=U_msin(\omega t+\theta_u)\<br>$$<br>则<br>$$<br>p(t)=ui=2UIsin(\omega t+\theta_u)sin(\omega t+\theta_i)\<br>=UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)<br>$$<br>瞬时功率实际意义不大，通常引用平均功率的概念</p>
+<h3 id="3-7-2-有功功率及功率因数"><a href="#3-7-2-有功功率及功率因数" class="headerlink" title="3.7.2 有功功率及功率因数"></a>3.7.2 有功功率及功率因数</h3><p>平均功率或称<strong>有功功率</strong>，用大写字母 P 表示，单位为瓦<br>$$<br>P=\frac1T\int^T_0pdt=\frac1T[UIcos\phi-UIcos(2\omega t+\theta_u+\theta_i)]dt\<br>=UIcos\phi<br>$$<br>$\lambda=cos\phi$ 称为<strong>功率因数</strong></p>
+<p>$\phi$ 称为<strong>功率因数角</strong></p>
+<ul>
+<li>对于纯电阻电路，$P=I^2R$</li>
+<li>对于纯电感电路，$P=0$</li>
+<li>对于纯电容电路，$P=0$</li>
+</ul>
+<p>只有电阻消耗有功功率，动态元件不消耗有功功率</p>
+<h3 id="3-7-3-无功功率和视在功率"><a href="#3-7-3-无功功率和视在功率" class="headerlink" title="3.7.3 无功功率和视在功率"></a>3.7.3 无功功率和视在功率</h3><p><strong>无功功率</strong>用大写字母 Q 表示，单位为乏（var）<br>$$<br>Q=UIsin\phi<br>$$</p>
+<ul>
+<li>对于纯电感电路，$Q=X_LI^2$</li>
+<li>对于纯电容电路，$Q=X_CI^2$</li>
+<li>对于纯电阻电路，$Q=0$</li>
+</ul>
+<p><strong>视在功率</strong>用 S 表示，单位为伏安（VA）<br>$$<br>S=UI<br>$$</p>
+<h3 id="3-7-4-小结"><a href="#3-7-4-小结" class="headerlink" title="3.7.4 小结"></a>3.7.4 小结</h3><p>有功功率、视在功率和无功功率三者之间构成一个功率三角形<br>$$<br>P=UI\cdot cos\phi\<br>Q=S\cdot sin\phi\<br>S=\sqrt{P^2+Q^2}<br>$$<br><img src="doc/image-20210620004930214.png" alt="image-20210620004930214" style="zoom:50%;" /></p>
+<h3 id="3-7-5-功率因数的提高"><a href="#3-7-5-功率因数的提高" class="headerlink" title="3.7.5 功率因数的提高"></a>3.7.5 功率因数的提高</h3><p>$$<br>\lambda=cos\phi=\frac PS<br>$$</p>
+<p>提高功率因数的意义:</p>
+<ol>
+<li>提高电力设备的利用率</li>
+<li>降低传输线路损耗（可以采用并联电容的方法）</li>
+</ol>
+<p><strong>并联电容的确定</strong>：<br>$$<br>C=\frac{P}{\omega U^{2}}\left(\operatorname{tg} \varphi_{1}-\operatorname{tg} \varphi_{2}\right)<br>$$</p>
+<h3 id="3-8-2-串联谐振"><a href="#3-8-2-串联谐振" class="headerlink" title="3.8.2 串联谐振"></a>3.8.2 串联谐振</h3>
       </section>
 
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/05/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%BC%96%E7%A0%81%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第三章）</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -150,8 +276,8 @@
     
     <div class="card-text">
       
-        <a href="/2021/11/05/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E8%BF%90%E7%AE%97%E5%99%A8/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">计算机组成原理笔记（第四章）</h2>
+        <a href="/2021/11/05/2.%20%20%E4%B8%80%E9%98%B6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF%E7%9A%84%E6%9A%82%E6%80%81%E5%88%86%E6%9E%90/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">模电笔记（一阶动态电路的暂态分析）</h2>
         </a>
       
       <div class="card-text--row">Older</div>
